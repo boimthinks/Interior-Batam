@@ -1,0 +1,203 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PlaceholderImage from '../components/PlaceholderImage.astro';
+import GoogleSourcePreferences from '../components/GoogleSourcePreferences.astro';
+import Schema from '../components/Schema.astro';
+import { SITE, waLink } from '../config/site';
+import type { ServiceCategory } from '../config/categories';
+
+interface RelatedArticle {
+  href: string;
+  title: string;
+  image: string;
+  date: Date;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  keywords: string[];
+  heroImage: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author: string;
+  url: string;
+  image: string;
+  category: ServiceCategory;
+  categories: ServiceCategory[];
+  relatedArticles: RelatedArticle[];
+  draft: boolean;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  heroImage,
+  pubDate,
+  updatedDate,
+  author,
+  url,
+  image,
+  category,
+  categories,
+  relatedArticles,
+  draft,
+} = Astro.props;
+
+const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website Interior Batam. Saya ingin konsultasi gratis mengenai jasa ${category.name} di Batam.`;
+---
+
+<BaseLayout title={title} description={description} keywords={keywords} image={image} type="article" noindex={draft}>
+  <Schema
+    type="article"
+    article={{
+      title,
+      description,
+      url,
+      image,
+      author,
+      datePublished: pubDate.toISOString(),
+      dateModified: (updatedDate ?? pubDate).toISOString(),
+    }}
+  />
+
+  <div class="container article-container">
+    <Breadcrumbs
+      items={[
+        { name: 'Artikel', url: new URL('/artikel/', SITE.domain).href },
+        { name: category.name, url: new URL(category.serviceHref, SITE.domain).href },
+        { name: title, url },
+      ]}
+    />
+
+    <div class="article-layout-grid">
+      {/* KOLOM KIRI: KONTEN UTAMA ARTIKEL */}
+      <article class="article-main-content">
+        {draft && (
+          <p class="draft-badge">⚠️ Draft — belum terindex mesin pencari. Isi konten &amp; set draft:false.</p>
+        )}
+
+        <div class="article-header">
+          <a class="article-category-badge" href={category.serviceHref}>
+            📁 {category.name}
+          </a>
+          <h1>{title}</h1>
+          <p class="article-byline">
+            Oleh <a class="article-author-link" href="https://www.facebook.com/joel.avellokids" target="_blank" rel="noopener noreferrer author">{author}</a> · {' '}
+            <time datetime={pubDate.toISOString()}>
+              {pubDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </time>
+            {updatedDate && (
+              <> · Diperbarui <time datetime={updatedDate.toISOString()}>{updatedDate.toLocaleDateString('id-ID')}</time></>
+            )}
+          </p>
+        </div>
+
+        <div class="reveal article-featured-img">
+          <PlaceholderImage label={title} src={heroImage} ratio="16 / 9" />
+        </div>
+
+        <div class="article-body">
+          <slot />
+        </div>
+
+        {/* GOOGLE SOURCE PREFERENCES */}
+        <GoogleSourcePreferences label="Tambah Interior Batam sebagai Sumber Favorit di Google" />
+
+        {/* BOTTOM OFFER BANNER */}
+        <section class="article-bottom-offer">
+          <div class="article-offer-content">
+            <h3>Butuh Jasa {category.name} di Batam?</h3>
+            <p>
+              Konsultasikan denah dan kebutuhan interior hunian Anda bersama tim kami. Dapatkan survey lokasi gratis ke seluruh penjuru Batam, estimasi RAB transparan, dan desain 3D sebelum pengerjaan.
+            </p>
+            <div class="article-offer-actions">
+              <a class="wa-cta" href={waLink(waMessage)} target="_blank" rel="noopener">
+                💬 Jadwalkan Survey Gratis via WhatsApp
+              </a>
+              <a class="ghost-cta" href={category.serviceHref}>
+                Lihat Penawaran {category.name} →
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      {/* KOLOM KANAN: STICKY SIDEBAR */}
+      <aside class="article-sidebar">
+        {/* Widget 1: Kontak & Penawaran Layanan (CTA) */}
+        <div class="sidebar-widget sidebar-cta-widget">
+          <span class="sidebar-badge">Konsultasi &amp; Survey Gratis</span>
+          <h3 class="sidebar-widget-title">Jasa {category.name} Batam</h3>
+          <p class="sidebar-widget-desc">
+            {category.description}
+          </p>
+
+          <a class="wa-cta sidebar-wa-btn" href={waLink(waMessage)} target="_blank" rel="noopener">
+            💬 Chat WhatsApp Sekarang
+          </a>
+
+          <ul class="sidebar-trust-list">
+            <li><span class="usp-check">✓</span> Gratis Survey Seluruh Batam</li>
+            <li><span class="usp-check">✓</span> Desain 3D Realistis</li>
+            <li><span class="usp-check">✓</span> Workshop Sendiri (Batam Center)</li>
+            <li><span class="usp-check">✓</span> Garansi Pemeliharaan Resmi</li>
+          </ul>
+
+          <div class="sidebar-contact-box">
+            <p>🏢 <strong>Kantor:</strong> Ruko Mega Legenda 2, Baloi Permai</p>
+            <p>🔨 <strong>Workshop:</strong> Ruko Valley Park, Batam Center</p>
+            <p>📞 <strong>WhatsApp:</strong> +62 813-7370-3639</p>
+          </div>
+
+          <a class="sidebar-more-link" href={category.serviceHref}>
+            Lihat Layanan {category.name} Selengkapnya →
+          </a>
+        </div>
+
+        {/* Widget 2: Artikel Terkait (Kategori Sama) */}
+        {relatedArticles.length > 0 && (
+          <div class="sidebar-widget">
+            <h3 class="sidebar-widget-title">Artikel Terkait ({category.name})</h3>
+            <div class="sidebar-related-list">
+              {relatedArticles.map((rel) => (
+                <a class="sidebar-related-item" href={rel.href}>
+                  <div class="sidebar-related-thumb">
+                    <PlaceholderImage label={rel.title} src={rel.image} ratio="4 / 3" />
+                  </div>
+                  <div class="sidebar-related-info">
+                    <h4>{rel.title}</h4>
+                    <time datetime={rel.date.toISOString()}>
+                      {rel.date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </time>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Widget 3: 6 Kategori Layanan Kami */}
+        <div class="sidebar-widget">
+          <h3 class="sidebar-widget-title">Kategori Layanan Kami</h3>
+          <p class="sidebar-widget-subtitle">Selaras dengan 6 Layanan Interior Batam:</p>
+          <ul class="sidebar-services-list">
+            {categories.map((cat) => (
+              <li>
+                <a
+                  class:list={['sidebar-service-item', { active: cat.id === category.id }]}
+                  href={cat.serviceHref}
+                >
+                  <span class="sidebar-service-name">{cat.name}</span>
+                  <span class="sidebar-service-arrow">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

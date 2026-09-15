@@ -1,0 +1,53 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = SITE.description,
+  keywords = [],
+  image,
+  canonical = Astro.url.href,
+  noindex = false,
+  type = 'website',
+  ogImage,
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} – ${SITE.tagline}`;
+const pageImage = ogImage || image || `${SITE.domain}/favicon.svg`;
+---
+
+<!-- Primary Meta -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={pageImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={pageImage} />
+
+<!-- Theme -->
+<meta name="theme-color" content="#1f2937" />

@@ -1,0 +1,670 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Schema from '../components/Schema.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import { SITE, waLink } from '../config/site';
+
+const aboutUrl = new URL('/tentang-kami/', SITE.domain).href;
+
+const stats = [
+  { value: '100%', label: 'Workshop Lokal Mandiri' },
+  { value: '3D', label: 'Visualisasi Realistis' },
+  { value: 'RAB', label: 'Transparan Tanpa Biaya Siluman' },
+  { value: 'Garansi', label: 'Purna Jual Terjamin' },
+];
+
+const values = [
+  {
+    icon: '🏭',
+    title: 'Workshop & Tukang Sendiri',
+    desc: 'Kami memproduksi seluruh furniture custom langsung di workshop Valley Park Batam Center. Bukan calo atau perantara pihak ketiga, sehingga mutu bahan dan presisi ukuran terjaga ketat.',
+  },
+  {
+    icon: '🌊',
+    title: 'Material Tahan Iklim Pesisir',
+    desc: 'Udara Batam yang beriklim maritim dan lembap menuntut pemilihan material khusus. Kami mengutamakan plywood/blockboard grade pilihan, lem tahan lembap, finishing HPL rapi, dan engsel stainless steel anti karat.',
+  },
+  {
+    icon: '📐',
+    title: 'Desain 3D Sebelum Produksi',
+    desc: 'Setiap sudut ruangan dirancang dengan visualisasi 3D detail agar Anda dapat melihat tampilan nyata pencahayaan, warna, dan proporsinya sebelum proses perakitan kayu dimulai.',
+  },
+  {
+    icon: '📋',
+    title: 'RAB Rinci & Pembayaran Bertahap',
+    desc: 'Transparansi total dalam setiap item pekerjaan dan spesifikasi bahan. Tidak ada pembengkakan biaya di tengah pengerjaan. Sistem pembayaran dilakukan bertahap sesuai progres fisik.',
+  },
+  {
+    icon: '🛡️',
+    title: 'Jaminan Garansi Pengerjaan',
+    desc: 'Kami memberikan garansi pemeliharaan untuk memastikan fungsi engsel, rel laci, sambungan edging, dan finishing tetap prima setelah serah terima proyek.',
+  },
+  {
+    icon: '🚗',
+    title: 'Gratis Survey Lokasi di Batam',
+    desc: 'Tim kami siap datang ke rumah, unit apartemen, ruko, atau kantor Anda untuk pengukuran langsung dan konsultasi teknis tanpa dikenakan biaya survey.',
+  },
+];
+
+const pillars = [
+  {
+    title: 'Kitchen Set & Dapur Custom',
+    desc: 'Kabinet dapur fungsional anti-rayap & anti-lembab dengan penataan ergonomis untuk rumah maupun apartemen.',
+    href: '/layanan/kitchen-set-batam/',
+  },
+  {
+    title: 'Interior Apartemen',
+    desc: 'Optimasi ruang terbatas (studio & 2BR) di apartemen Batam dengan custom smart furniture multifungsi.',
+    href: '/layanan/interior-apartemen-batam/',
+  },
+  {
+    title: 'Renovasi Rumah Subsidi',
+    desc: 'Maksimalkan luas tanah dan sisa lahan rumah subsidi tipe 21/36 menjadi hunian nyaman dan berestetika tinggi.',
+    href: '/layanan/renovasi-rumah-subsidi-batam/',
+  },
+  {
+    title: 'Custom Furniture Ruang Tamu',
+    desc: 'Partisi kisi-kisi, backdrop TV modern, credenza, dan lemari pajangan yang selaras dengan tema interior.',
+    href: '/layanan/custom-furniture-ruang-tamu-batam/',
+  },
+  {
+    title: 'Kamar Tidur & Wardrobe',
+    desc: 'Lemari pakaian built-in plafon penuh, meja rias terintegrasi, dan headboard elegan yang memaksimalkan ruang simpan.',
+    href: '/layanan/interior-kamar-tidur-wardrobe-batam/',
+  },
+  {
+    title: 'Interior Komersial & Kantor',
+    desc: 'Renovasi interior ruko, ruang meeting, front desk klinik, kafe, dan retail untuk meningkatkan citra bisnis.',
+    href: '/layanan/renovasi-interior-komersial-batam/',
+  },
+];
+
+const steps = [
+  {
+    num: '01',
+    title: 'Konsultasi & Survey Lokasi',
+    desc: 'Kami mendengarkan kebutuhan, mengukur dimensi ruangan secara akurat di lokasi Anda, dan mendiskusikan estimasi budget yang ditargetkan.',
+  },
+  {
+    num: '02',
+    title: 'Penyusunan Desain 3D & RAB',
+    desc: 'Pembuatan sketsa denah dan visualisasi 3D realistis disertai rincian Rencana Anggaran Biaya (RAB) yang transparan per item material.',
+  },
+  {
+    num: '03',
+    title: 'Fabrikasi Presisi di Workshop',
+    desc: 'Produksi potongan bahan, pelapisan edging mesin, dan perakitan awal dilakukan di workshop kami di Batam Center oleh tenaga ahli berpengalaman.',
+  },
+  {
+    num: '04',
+    title: 'Instalasi Bersih & Garansi',
+    desc: 'Pemasangan rapi di lokasi Anda dengan protokol kebersihan kerja, pengecekan fungsi setiap elemen, dan penyerahan kartu garansi.',
+  },
+];
+---
+
+<BaseLayout
+  title="Tentang Kami – Jasa Desain & Kontraktor Interior Batam"
+  description="Mengenal Interior Batam: kontraktor & jasa desain interior dengan workshop mandiri di Batam Center. Spesialis custom furniture, kitchen set, dan renovasi bergaransi di seluruh Batam."
+  keywords={[
+    'Tentang Interior Batam',
+    'Kontraktor Interior Batam',
+    'Workshop Interior Batam',
+    'Jasa Desain Interior Batam',
+    'Tukang Interior Batam',
+  ]}
+>
+  <Schema type="organization" />
+  <Schema type="localbusiness" />
+  <Schema items={[{ name: 'Tentang Kami', url: aboutUrl }]} type="breadcrumb" />
+
+  {/* Schema Tambahan: AboutPage */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${aboutUrl}#aboutpage`,
+    url: aboutUrl,
+    name: 'Tentang Interior Batam',
+    description: 'Profil kontraktor dan desainer interior terpercaya dengan workshop sendiri di Kota Batam.',
+    inLanguage: 'id-ID',
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+    about: { '@id': `${SITE.domain}/#organization` },
+  })}></script>
+
+  {/* 1. HERO PAGE */}
+  <section class="hero hero-page">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Tentang Kami', url: aboutUrl }]} />
+      <span class="eyebrow">Profil Kontraktor & Workshop</span>
+      <h1>Tentang {SITE.name}</h1>
+      <p class="lead">
+        Mitra terpercaya desain dan pembuatan interior custom di Kota Batam. Kami memadukan estetika modern, fungsionalitas ruang maksimal, dan ketahanan material terhadap iklim pesisir tropis Batam.
+      </p>
+    </div>
+  </section>
+
+  {/* 2. STATS BAR */}
+  <section class="stats-bar-wrap">
+    <div class="container">
+      <div class="stats-grid">
+        {stats.map((s) => (
+          <div class="stat-item">
+            <span class="stat-val">{s.value}</span>
+            <span class="stat-lbl">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 3. PROFIL & KOMITMEN */}
+  <section class="container sections">
+    <div class="story-grid">
+      <div class="story-text">
+        <span class="eyebrow">Dedikasi & Pengalaman</span>
+        <h2>Mewujudkan Hunian & Ruang Usaha Impian Warga Batam</h2>
+        <p>
+          <strong>{SITE.name}</strong> hadir untuk memberikan solusi interior yang jujur, berkualitas tinggi, dan bebas rasa cemas bagi para pemilik rumah, apartemen, serta pelaku usaha di Batam.
+        </p>
+        <p>
+          Banyak pemilik properti di Batam menghadapi tantangan berupa mebel cepat rusak akibat lembap tinggi, engsel berkarat terpengaruh udara laut, atau biaya yang membengkak karena memakai kontraktor perantara.
+        </p>
+        <p>
+          Dengan basis workshop mandiri di <strong>Komplek Ruko Valley Park Batam Center</strong>, kami memegang kendali penuh atas setiap tahap produksi. Dari pemilihan multiplek pilihan, pengeleman edging tahan air, hingga instalasi presisi di hunian Anda.
+        </p>
+        <div class="story-cta">
+          <WhatsAppCTA label="Konsultasi Kebutuhan Anda" message="Halo Interior Batam, saya ingin konsultasi proyek interior saya." />
+          <a href="/portofolio/" class="ghost-cta">Lihat Portofolio</a>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <h3>Komitmen Kualitas Kami</h3>
+        <ul class="commit-list">
+          <li>
+            <strong>Bukan Broker / Makelar:</strong> Proyek Anda ditangani langsung oleh tim tukang kayu dan drafter kami sendiri.
+          </li>
+          <li>
+            <strong>Presisi Ukuran Milimeter:</strong> Pengukuran teliti di lokasi untuk memastikan furniture built-in terpasang pas tanpa celah kotoran.
+          </li>
+          <li>
+            <strong>Hardware Awet:</strong> Selalu menggunakan rel laci double track dan engsel sendok hidrolik soft-close berkualitas.
+          </li>
+          <li>
+            <strong>Survey & Konsultasi Tanpa Biaya:</strong> Kemudahan bagi Anda untuk berdiskusi tanpa komitmen awal yang membebani.
+          </li>
+        </ul>
+        <div class="contact-snip">
+          <span>Ada pertanyaan seputar rencana ruangan Anda?</span>
+          <a href={waLink('Halo, saya ingin bertanya seputar layanan interior Batam.')} target="_blank" rel="noopener">
+            Chat WhatsApp: {SITE.phone} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 4. NILAI UTAMA / WHY US */}
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="eyebrow">Standar Kerja</span>
+        <h2>Mengapa Memilih {SITE.name}?</h2>
+        <p class="muted">Keunggulan pengerjaan yang dirancang khusus untuk kenyamanan dan keamanan investasi jangka panjang Anda di Batam.</p>
+      </div>
+
+      <div class="values-grid">
+        {values.map((v) => (
+          <div class="value-card">
+            <span class="value-icon">{v.icon}</span>
+            <h3>{v.title}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 5. LAYANAN UNGGULAN */}
+  <section class="container sections">
+    <div class="section-header-center">
+      <span class="eyebrow">Solusi Ruang</span>
+      <h2>Layanan Spesialis Interior Kami</h2>
+      <p class="muted">Keahlian desain dan fabrikasi custom untuk beragam kebutuhan properti di Batam.</p>
+    </div>
+
+    <div class="pillars-grid">
+      {pillars.map((p) => (
+        <a href={p.href} class="pillar-item">
+          <h3>{p.title}</h3>
+          <p>{p.desc}</p>
+          <span class="item-link">Lihat Detail Layanan →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* 6. ALUR KERJA */}
+  <section class="workflow-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="eyebrow">Proses Kerja</span>
+        <h2>4 Langkah Pengerjaan yang Tertata & Transparan</h2>
+        <p class="muted">Dari ide awal hingga kunci ruangan diserahkan kepada Anda dalam keadaan rapi dan bersih.</p>
+      </div>
+
+      <div class="steps-grid">
+        {steps.map((st) => (
+          <div class="step-card">
+            <span class="step-badge">{st.num}</span>
+            <h3>{st.title}</h3>
+            <p>{st.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* 7. KANTOR, WORKSHOP & WILAYAH */}
+  <section class="container sections">
+    <div class="office-grid">
+      <div class="office-info">
+        <span class="eyebrow">Lokasi & Legalitas</span>
+        <h2>Kunjungi Kantor &amp; Workshop Kami</h2>
+        <p>
+          Kami menyambut kedatangan Anda yang ingin berdiskusi desain secara langsung, mengecek contoh material HPL, atau melihat langsung proses fabrikasi mebel di workshop.
+        </p>
+
+        <div class="loc-box">
+          <h3>🏢 Kantor Operasional</h3>
+          <p>
+            {SITE.officeAddress.streetAddress}<br />
+            {SITE.officeAddress.addressLocality}, Kepulauan Riau {SITE.officeAddress.postalCode}
+          </p>
+        </div>
+
+        <div class="loc-box">
+          <h3>🔨 Workshop Fabrikasi</h3>
+          <p>
+            {SITE.workshopAddress.streetAddress}<br />
+            {SITE.workshopAddress.addressLocality}, Kepulauan Riau {SITE.workshopAddress.postalCode}
+          </p>
+        </div>
+
+        <div class="loc-box">
+          <h3>🕒 Jam Operasional</h3>
+          <p>Senin – Jumat: 09.00 – 17.00 WIB<br />Sabtu: 09.00 – 15.00 WIB (Minggu/Hari Libur via Janji Temu)</p>
+        </div>
+      </div>
+
+      <div class="coverage-box">
+        <h3>Wilayah Layanan di Batam</h3>
+        <p class="muted">
+          Kami melayani pengerjaan dan survey gratis mencakup seluruh kecamatan di Batam:
+        </p>
+        <div class="tags-cloud">
+          {SITE.serviceAreas.map((area) => (
+            <span class="area-tag">{area}</span>
+          ))}
+        </div>
+
+        <div class="quick-cta-card">
+          <h4>Ingin Jadwal Survey Lokasi?</h4>
+          <p>Tim kami dapat berkunjung langsung ke lokasi properti Anda untuk pengukuran dan konsultasi awal.</p>
+          <WhatsAppCTA label="Jadwalkan Survey Gratis Sekarang" message="Halo Interior Batam, saya ingin jadwalkan survey lokasi gratis ke properti saya." full={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 8. FINAL CTA */}
+  <section class="container">
+    <div class="final-cta">
+      <span class="eyebrow" style="color:var(--c-gold-soft);">Konsultasi Gratis</span>
+      <h2>Mulai Transformasi Interior Ruangan Anda Bersama {SITE.name}</h2>
+      <p class="muted" style="max-width:640px; margin:0 auto 28px;">
+        Konsultasikan kebutuhan desain dan budget Anda bersama tim ahli kami. Kami siap menghadirkan hunian yang fungsional, rapi, dan berdaya tahan tinggi.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <WhatsAppCTA label="Hubungi WhatsApp (+62 813-7370-3639)" message="Halo Interior Batam, saya ingin berdiskusi mengenai proyek interior saya." full={false} />
+        <a href="/estimasi-biaya/" class="ghost-cta" style="border-color:#fff; color:#fff;">Hitung Estimasi Biaya</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .stats-bar-wrap {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: 24px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px;
+  }
+  .stat-val {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--c-primary);
+  }
+  .stat-lbl {
+    font-size: 0.88rem;
+    color: var(--c-muted);
+    font-weight: 500;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 44px;
+    align-items: center;
+  }
+  .story-text h2 {
+    margin-top: 4px;
+    margin-bottom: 18px;
+    font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  }
+  .story-text p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: var(--c-fg);
+    line-height: 1.75;
+  }
+  .story-cta {
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+
+  .story-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .story-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    color: var(--c-primary-d);
+  }
+  .commit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .commit-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--c-fg);
+    position: relative;
+    padding-left: 24px;
+  }
+  .commit-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--c-gold);
+    font-weight: 800;
+  }
+  .contact-snip {
+    border-top: 1px solid var(--c-line);
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: var(--c-muted);
+  }
+  .contact-snip a {
+    font-weight: 600;
+    color: var(--c-primary);
+  }
+
+  .why-section {
+    background: #f0f4fa;
+    padding: clamp(48px, 6vw, 80px) 0;
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .section-header-center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(32px, 5vw, 48px);
+  }
+  .section-header-center h2 {
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 24px;
+  }
+  .value-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .value-icon {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .value-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.18rem;
+    color: var(--c-fg);
+  }
+  .value-card p {
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--c-muted);
+    line-height: 1.65;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
+  }
+  .pillar-item {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .pillar-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-gold);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+  }
+  .pillar-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.15rem;
+    color: var(--c-primary-d);
+  }
+  .pillar-item p {
+    margin: 0 0 16px 0;
+    font-size: 0.92rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  .item-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--c-primary);
+  }
+
+  .workflow-section {
+    background: #ffffff;
+    padding: clamp(48px, 6vw, 80px) 0;
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .step-card {
+    background: var(--c-bg);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+  }
+  .step-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--c-primary), var(--c-primary-d));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .step-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.08rem;
+    color: var(--c-fg);
+  }
+  .step-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+
+  .office-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .office-info h2 {
+    margin-top: 6px;
+    margin-bottom: 14px;
+  }
+  .office-info > p {
+    margin-bottom: 22px;
+    color: var(--c-muted);
+  }
+  .loc-box {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+  .loc-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    color: var(--c-primary-d);
+  }
+  .loc-box p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--c-fg);
+    line-height: 1.6;
+  }
+
+  .coverage-box {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .coverage-box h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 24px;
+  }
+  .area-tag {
+    background: #eef2f8;
+    color: var(--c-primary-d);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 64, 175, 0.12);
+  }
+  .quick-cta-card {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(184, 145, 80, 0.08));
+    border: 1px dashed var(--c-gold);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+  }
+  .quick-cta-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.05rem;
+    color: var(--c-fg);
+  }
+  .quick-cta-card p {
+    margin: 0 0 16px 0;
+    font-size: 0.88rem;
+    color: var(--c-muted);
+  }
+
+  @media (max-width: 900px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .office-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

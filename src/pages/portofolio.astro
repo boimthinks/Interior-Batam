@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PlaceholderImage from '../components/PlaceholderImage.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import Schema from '../components/Schema.astro';
+import { SITE } from '../config/site';
+
+const projects = [
+  { title: 'Kitchen Set Apartemen Pollux Habibie', loc: 'Nagoya', time: '3 minggu' },
+  { title: 'Ruang Tamu Rumah Tipe 36', loc: 'Batu Aji', time: '2 minggu' },
+  { title: 'Renovasi Ruko 3 Lantai', loc: 'Batam Center', time: '6 minggu' },
+  { title: 'Backdrop TV & Partisi', loc: 'Bengkong', time: '10 hari' },
+  { title: 'Dapur Rumah Subsidi', loc: 'Tiban', time: '2 minggu' },
+  { title: 'Interior Kafe', loc: 'Harbour Bay', time: '4 minggu' },
+];
+
+// ItemList + CreativeWork schema untuk portofolio
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: projects.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: { '@type': 'CreativeWork', name: p.title, contentLocation: p.loc },
+  })),
+};
+---
+
+<BaseLayout
+  title="Portofolio Proyek Interior Batam"
+  description="Galeri hasil kerja interior kami di Batam: kitchen set, apartemen, rumah subsidi, ruang tamu, dan ruko komersial dengan foto before-after."
+  keywords={['Portofolio Interior Batam', 'Galeri Interior Batam']}
+>
+  <Schema type="breadcrumb" items={[{ name: 'Portofolio', url: new URL('/portofolio/', SITE.domain).href }]} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemList)}></script>
+
+  <section class="hero hero-page">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Portofolio', url: new URL('/portofolio/', SITE.domain).href }]} />
+      <h1>Galeri Hasil Kerja Interior Kami di Batam</h1>
+      <p class="lead">Filter: Rumah Tapak, Apartemen, Dapur (Kitchen Set), Kantor/Komersial. Dokumentasi pengerjaan presisi langsung dari workshop kami di Batam.</p>
+    </div>
+  </section>
+
+  <section class="container sections">
+    <div class="card-grid">
+      {projects.map((p) => (
+        <article class="service-card">
+          <PlaceholderImage label={`${p.title} — ${p.loc}`} ratio="4 / 3" />
+          <div class="service-card-body">
+            <h3>{p.title}</h3>
+            <p>{p.loc} · Estimasi pengerjaan {p.time}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p style="margin-top:24px"><WhatsAppCTA /></p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PlaceholderImage from '../components/PlaceholderImage.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import Schema from '../components/Schema.astro';
+import { SITE, waLink } from '../config/site';
+
+interface RelatedArticle {
+  href: string;
+  title: string;
+  description?: string;
+  image?: string;
+  date?: Date;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  keywords: string[];
+  heroImage: string;
+  intro: string;
+  sections: { heading: string; body: string }[];
+  faq: { q: string; a: string }[];
+  slug: string;
+  pillarLabel: string;
+  related: RelatedArticle[];
+}
+
+const { title, description, keywords, heroImage, intro, sections, faq, slug, pillarLabel, related } = Astro.props;
+const url = new URL(`/layanan/${slug}/`, SITE.domain).href;
+const waOrderMessage = `Halo, saya ingin konsultasi penawaran untuk ${title}. Bisakah jadwalkan survey lokasi gratis di Batam?`;
+---
+
+<BaseLayout title={title} description={description} keywords={keywords} image={heroImage} type="website">
+  <Schema
+    type="service"
+    serviceName={title}
+    serviceDesc={description}
+    serviceUrl={url}
+  />
+
+  {/* 1. HERO PENAWARAN JASA */}
+  <section class="hero hero-page">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Layanan', url: new URL('/layanan/', SITE.domain).href }, { name: title, url }]} />
+      <p class="eyebrow">Penawaran Jasa Interior Batam</p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+
+      <div class="service-hero-actions">
+        <a class="wa-cta" href={waLink(waOrderMessage)} target="_blank" rel="noopener">💬 Jadwalkan Survey Gratis</a>
+        <a class="ghost-cta" href="#penawaran">Lihat Detail Penawaran</a>
+      </div>
+
+      <ul class="service-usp-bar">
+        <li><span class="usp-check">✓</span> Gratis Survey Seluruh Batam</li>
+        <li><span class="usp-check">✓</span> Visual Desain 3D Realistis</li>
+        <li><span class="usp-check">✓</span> Workshop Fisik Sendiri (Batam Center)</li>
+        <li><span class="usp-check">✓</span> Garansi Pemeliharaan Resmi</li>
+      </ul>
+
+      <div class="reveal hero-detail-img service-hero-wrapper">
+        <PlaceholderImage src={heroImage} label={title} ratio="4 / 3" class="service-hero-image" />
+      </div>
+    </div>
+  </section>
+
+  {/* 2. INTRO & VALUE PROPOSITION */}
+  <section class="container intro reveal" id="penawaran">
+    <div class="service-intro-box">
+      <p class="service-intro-text">{intro}</p>
+      <slot />
+      <div class="service-intro-cta">
+        <WhatsAppCTA message={waOrderMessage} label="Konsultasi Kebutuhan Ruangan via WhatsApp" />
+      </div>
+    </div>
+  </section>
+
+  {/* 3. RINCIAN SPESIFIKASI & PENAWARAN LAYANAN */}
+  <section class="container sections reveal">
+    <div class="service-sections-header">
+      <p class="eyebrow">Spesifikasi &amp; Keunggulan</p>
+      <h2>Standar Pengerjaan &amp; Penawaran Layanan Kami</h2>
+    </div>
+
+    {sections.map((s, idx) => (
+      <article class="pillar-section service-offering-item">
+        <div class="offering-badge">0{idx + 1}</div>
+        <div class="offering-content">
+          <h2>{s.heading}</h2>
+          <div class="pillar-body" set:html={s.body.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br/>')} />
+        </div>
+      </article>
+    ))}
+  </section>
+
+  {/* 4. ALUR PEMESANAN JASA (WORKFLOW) */}
+  <section class="container sections reveal service-workflow-section">
+    <p class="eyebrow">Alur Kerja Praktis</p>
+    <h2>4 Langkah Mudah Memesan Jasa di Interior Batam</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <strong>Konsultasi &amp; Survey Lokasi Gratis</strong>
+        <em>Tim teknis kami datang langsung mengukur ruangan Anda di seluruh wilayah Batam (rumah, ruko, apartemen).</em>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <strong>Visual Desain 3D &amp; Transparansi RAB</strong>
+        <em>Kami menyusun denah layout, visualisasi 3D realistis, serta rincian biaya resmi tanpa biaya tersembunyi.</em>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <strong>Fabrikasi Presisi di Workshop Batam Center</strong>
+        <em>Produksi langsung di bengkel kami menggunakan mesin modern, material tahan iklim pesisir, dan kontrol mutu ketat.</em>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <strong>Instalasi Bersih, Serah Terima &amp; Garansi</strong>
+        <em>Pemasangan tepat waktu oleh tukang berpengalaman, pembersihan sisa proyek, dan perlindungan garansi pemeliharaan.</em>
+      </li>
+    </ol>
+    <div style="margin-top: 32px; text-align: center;">
+      <a class="wa-cta" href={waLink(waOrderMessage)} target="_blank" rel="noopener">💬 Hubungi Kami untuk Mulai Survey</a>
+    </div>
+  </section>
+
+  {/* 5. FAQ PEMESANAN */}
+  {faq.length > 0 && (
+    <section class="container faq">
+      <p class="eyebrow">Tanya Jawab Seputar Layanan</p>
+      <h2>Pertanyaan Umum Calon Klien</h2>
+      <div class="faq-list">
+        {faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* 6. ARTIKEL PENUNJANG (EUKASI & PANDUAN LAPANGAN) */}
+  {related.length > 0 && (
+    <section class="container related">
+      <p class="eyebrow">Edukasi &amp; Panduan Terkait</p>
+      <h2>Artikel Penunjang Seputar {pillarLabel}</h2>
+      <div class="card-grid">
+        {related.map((a) => (
+          <ArticleCard href={a.href} title={a.title} description={a.description} image={a.image} date={a.date} />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* 7. FINAL CTA PENAWARAN */}
+  <section class="container final-cta">
+    <h2>Wujudkan Ruangan Impian Anda Sekarang Bersama Ahlinya di Batam</h2>
+    <p>Dapatkan survey lokasi gratis, konsultasi denah, dan estimasi Rencana Anggaran Biaya (RAB) transparan langsung dari workshop kami.</p>
+    <WhatsAppCTA message={waOrderMessage} label="Jadwalkan Survey Gratis Sekarang via WhatsApp" full />
+    <p class="muted" style="margin-top: 18px;">
+      Alamat Workshop: Komplek Ruko Valley Park Blk. A No.01, Batam Center • Garansi Resmi &amp; Tanpa Biaya Calo.
+    </p>
+  </section>
+</BaseLayout>

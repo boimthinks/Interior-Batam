@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Halaman 404 statis (output /404.html cocok untuk shared hosting)
+---
+
+<BaseLayout title="Halaman Tidak Ditemukan (404)" description="Halaman tidak ditemukan." noindex={true}>
+  <section class="hero hero-page" style="text-align:center;">
+    <div class="container" style="padding: 40px 20px;">
+      <h1>404 — Halaman Tidak Ditemukan</h1>
+      <p class="lead" style="margin: 0 auto 24px;">Maaf, halaman yang Anda cari tidak tersedia atau sudah dipindahkan.</p>
+      <p>
+        <a class="wa-cta" href="/">Kembali ke Beranda</a>
+        <a class="ghost-cta" href="/layanan/" style="margin-left:12px">Lihat Layanan</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

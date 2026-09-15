@@ -1,0 +1,53 @@
+---
+import { SITE, waLink } from '../config/site';
+import Schema from './Schema.astro';
+import GoogleSourcePreferences from './GoogleSourcePreferences.astro';
+
+const year = new Date().getFullYear();
+const socialLinks = Object.entries(SITE.socials).map(([k, v]) => ({
+  label: k.charAt(0).toUpperCase() + k.slice(1),
+  href: v,
+}));
+---
+
+<Schema type="organization" />
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>{SITE.name}</h3>
+      <p>{SITE.tagline}</p>
+      <p class="muted">{SITE.description}</p>
+      <GoogleSourcePreferences label="Ikuti di Google Search" />
+    </div>
+
+    <div>
+      <h4>Kontak &amp; Alamat</h4>
+      <ul class="footer-list">
+        <li>💬 <a href={waLink()} target="_blank" rel="noopener">{SITE.phone} (WhatsApp)</a></li>
+        <li>✉️ <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        <li>🏢 <strong>Kantor:</strong> Ruko Mega Legenda 2 Blok B2 No.7, Baloi Permai</li>
+        <li>🔨 <strong>Workshop:</strong> Ruko Valley Park Blk. A No.01, Batam Center</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Area Layanan</h4>
+      <p class="muted">{SITE.serviceAreas.join(' • ')}</p>
+    </div>
+
+    <div>
+      <h4>Sosial Media</h4>
+      <ul class="footer-list">
+        {socialLinks.map((s) => (
+          <li><a href={s.href} target="_blank" rel="noopener">{s.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {year} {SITE.legalName}. Hak cipta dilindungi. Pengerjaan bergaransi.</p>
+    <p class="muted">Jam operasional: Senin–Jumat 09:00–17:00, Sabtu 09:00–15:00 (WIB).</p>
+  </div>
+</footer>

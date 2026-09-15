@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import { SITE } from '../config/site';
+
+// Simulasi estimasi (BUKAN RAB riil). Angka placeholder dapat disesuaikan.
+const RATES = {
+  kitchenSetAluminium: 3500000, // per meter lari
+  kitchenSetMultiplex: 2200000,
+  wardrobe: 1800000,            // per meter lari
+  backdropTv: 1500000,          // per meter
+  partisi: 900000,              // per meter
+  plafonDrop: 250000,           // per m2
+};
+---
+
+<BaseLayout
+  title="Estimasi Biaya Interior Batam (Kalkulator)"
+  description="Simulasi cepat estimasi biaya kitchen set, wardrobe, backdrop TV, partisi, dan plafon drop di Batam. Untuk RAB akurat, hubungi tim kami."
+  keywords={['Estimasi Biaya Interior Batam', 'Kalkulator RAB Batam']}
+>
+  <section class="hero hero-page">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Estimasi Biaya', url: new URL('/estimasi-biaya/', SITE.domain).href }]} />
+      <h1>Kalkulator Estimasi Biaya Interior Batam</h1>
+      <p class="lead">Simulasi kasar berdasarkan ukuran. Angka ini <strong>bukan penawaran final</strong>; RAB riil menyesuaikan material & kompleksitas. Gratis survey untuk penetapan harga pasti.</p>
+    </div>
+  </section>
+
+  <section class="container sections">
+    <form id="calc" class="calc">
+      <div class="calc-row">
+        <label>Kitchen Set Aluminium (meter lari)
+          <input type="number" id="ksAlu" min="0" value="3" />
+        </label>
+        <label>Kitchen Set Multipleks HPL (meter lari)
+          <input type="number" id="ksMul" min="0" value="0" />
+        </label>
+      </div>
+      <div class="calc-row">
+        <label>Wardrobe / Lemari (meter lari)
+          <input type="number" id="ward" min="0" value="2" />
+        </label>
+        <label>Backdrop TV (meter)
+          <input type="number" id="bd" min="0" value="3" />
+        </label>
+      </div>
+      <div class="calc-row">
+        <label>Partisi Ruangan (meter)
+          <input type="number" id="part" min="0" value="0" />
+        </label>
+        <label>Plafon Drop (m²)
+          <input type="number" id="plaf" min="0" value="12" />
+        </label>
+      </div>
+      <div class="calc-result">
+        <h3>Estimasi: <span id="total">Rp 0</span></h3>
+        <p class="muted">Belum termasuk material finishing premium & aksesoris merek (Hafele/Blum/Taco).</p>
+      </div>
+    </form>
+    <p><WhatsAppCTA message="Halo, saya sudah simulasi estimasi di web, boleh minta RAB pasti?" label="Minta RAB Pasti via WhatsApp" /></p>
+  </section>
+</BaseLayout>
+
+<script is:inline define:vars={{ RATES }}>
+  const fmt = (n) => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+  function hitung() {
+    const v = (id) => parseFloat(document.getElementById(id).value) || 0;
+    const total =
+      v('ksAlu') * RATES.kitchenSetAluminium +
+      v('ksMul') * RATES.kitchenSetMultiplex +
+      v('ward') * RATES.wardrobe +
+      v('bd') * RATES.backdropTv +
+      v('part') * RATES.partisi +
+      v('plaf') * RATES.plafonDrop;
+    document.getElementById('total').textContent = fmt(total);
+  }
+  document.getElementById('calc').addEventListener('input', hitung);
+  hitung();
+</script>
+
+<style>
+  .calc { background: #f8fafc; border: 1px solid var(--c-border); border-radius: var(--radius); padding: 20px; }
+  .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .calc label { display: flex; flex-direction: column; font-size: 0.9rem; font-weight: 600; color: var(--c-fg); }
+  .calc input { margin-top: 6px; padding: 10px; border: 1px solid var(--c-border); border-radius: 8px; font-size: 1rem; }
+  .calc-result { margin-top: 8px; padding-top: 16px; border-top: 1px dashed var(--c-border); }
+  @media (max-width: 600px) { .calc-row { grid-template-columns: 1fr; } }
+</style>

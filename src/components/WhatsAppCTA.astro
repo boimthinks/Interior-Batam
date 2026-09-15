@@ -1,0 +1,19 @@
+---
+import { waLink } from '../config/site';
+
+interface Props {
+  message?: string;
+  label?: string;
+  full?: boolean;
+}
+const { message, label = 'Konsultasi Gratis via WhatsApp', full = false } = Astro.props;
+---
+
+<a
+  class:list={['wa-cta', { 'wa-cta-full': full }]}
+  href={waLink(message)}
+  target="_blank"
+  rel="noopener"
+>
+  💬 {label}
+</a>

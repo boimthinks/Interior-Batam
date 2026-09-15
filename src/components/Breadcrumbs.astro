@@ -1,0 +1,20 @@
+---
+import { SITE } from '../config/site';
+import Schema from './Schema.astro';
+
+interface Props {
+  items: { name: string; url: string }[];
+}
+const { items } = Astro.props;
+const full = [{ name: 'Beranda', url: SITE.domain + '/' }, ...items];
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol>
+    {full.map((it) => (
+      <li><a href={it.url}>{it.name}</a></li>
+    ))}
+  </ol>
+</nav>
+
+<Schema type="breadcrumb" items={full} />

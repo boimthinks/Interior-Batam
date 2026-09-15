@@ -1,0 +1,28 @@
+---
+import PlaceholderImage from './PlaceholderImage.astro';
+
+interface Props {
+  href: string;
+  title: string;
+  shortTitle?: string;
+  description?: string;
+  image?: string;
+}
+const { href, title, shortTitle, description, image } = Astro.props;
+const cleanTitle = title.replace(/:\s*/g, ' ');
+---
+
+<a class="service-card" href={href}>
+  <PlaceholderImage label={cleanTitle} src={image} ratio="4 / 3" />
+  <div class="service-card-body">
+    {shortTitle ? (
+      <>
+        <h3 class="service-card-short-title">{shortTitle}</h3>
+        <p class="service-card-long-title">{cleanTitle}</p>
+      </>
+    ) : (
+      <h3>{cleanTitle}</h3>
+    )}
+    {description && <p class="service-card-description">{description}</p>}
+  </div>
+</a>

@@ -1,0 +1,65 @@
+# ============================================================
+# .htaccess — interiorbatam.web.id (Shared Hosting / Apache)
+# Build static Astro: output ke folder/index.html, trailingSlash 'ignore'
+# ============================================================
+
+# 1. Aktifkan mod_rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- Force HTTPS (shared hosting umumnya sediakan sertifikat) ---
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # --- www -> non-www (pilih salah satu; sesuaikan preferensi brand) ---
+  RewriteCond %{HTTP_HOST} ^www\.(interiorbatam\.web\.id)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # --- Extensionless pretty URL: /layanan/kitchen-set-batam -> /layanan/kitchen-set-batam/index.html ---
+  # (Astro build.format 'directory' sudah menghasilkan index.html per route)
+  # Jika user mengetik tanpa trailing slash, arahkan ke direktori agar index.html terbaca
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # Handle direktori tanpa trailing slash -> tambahkan slash agar index.html load
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.+[^/])$ https://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
+</IfModule>
+
+# 2. Cache asset statis (performance / Core Web Vitals)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType application/json "access plus 1 day"
+  ExpiresByType text/html "access plus 6 hours"
+</IfModule>
+
+# 3. Gzip compression (jika belum aktif di server)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# 4. Security & SEO headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # HSTS (aktifkan hanya jika sudah 100% HTTPS)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# 5. Proteksi file sensitif
+<FilesMatch "^\.|^composer\.|wp-config|/scripts/">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# 6. Custom 404 (Astro menghasilkan /404.html)
+ErrorDocument 404 /404.html

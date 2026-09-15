@@ -1,0 +1,58 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+type PillarKey = CollectionEntry<'articles'>['data']['pillar'];
+
+interface PillarInfo { label: string; articlePillar: PillarKey; }
+
+export async function getStaticPaths() {
+  // Mapping slug pilar -> (label & pillar article enum) — lokal di fungsi agar tidak kena TDZ
+  const PILLAR_META: Record<string, { label: string; articlePillars: PillarKey[] }> = {
+    'kitchen-set-batam': { label: 'Kitchen Set', articlePillars: ['kitchen-set'] },
+    'renovasi-rumah-subsidi-batam': { label: 'Renovasi Rumah Subsidi', articlePillars: ['rumah-subsidi'] },
+    'interior-apartemen-batam': { label: 'Interior Apartemen', articlePillars: ['apartemen'] },
+    'custom-furniture-ruang-tamu-batam': { label: 'Interior Ruang Tamu', articlePillars: ['ruang-tamu'] },
+    'renovasi-interior-komersial-batam': { label: 'Interior Kantor', articlePillars: ['interior-kantor', 'komersial'] },
+    'interior-kamar-tidur-wardrobe-batam': { label: 'Interior Kamar Tidur', articlePillars: ['kamar-tidur'] },
+  };
+
+  const services = await getCollection('services');
+  const articles = await getCollection('articles');
+  return services.map((service) => {
+    const meta = PILLAR_META[service.id];
+    const related = meta
+      ? articles
+          .filter((a) => meta.articlePillars.includes(a.data.pillar))
+          .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+          .map((a) => ({
+            href: `/artikel/${a.id}/`,
+            title: a.data.title,
+            description: a.data.description,
+            image: a.data.heroImage,
+            date: a.data.pubDate,
+          }))
+      : [];
+    return { params: { slug: service.id }, props: { service, related, pillarLabel: meta?.label || service.data.title } };
+  });
+}
+
+const { service, related, pillarLabel } = Astro.props;
+const { Content } = await render(service);
+const d = service.data;
+---
+
+<ServiceLayout
+  title={d.title}
+  description={d.description}
+  keywords={d.keywords}
+  heroImage={d.heroImage}
+  intro={d.intro}
+  sections={d.sections}
+  faq={d.faq}
+  slug={service.id}
+  pillarLabel={pillarLabel}
+  related={related}
+>
+  <Content />
+</ServiceLayout>

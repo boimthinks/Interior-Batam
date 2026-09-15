@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { SITE } from '../../config/site';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Layanan & Penawaran Jasa Interior Batam"
+  description="Katalog penawaran jasa desain & kontraktor interior Batam: kitchen set custom, renovasi rumah subsidi, interior apartemen, custom furniture ruang tamu, dan renovasi kantor ruko."
+  keywords={['Jasa Interior Batam', 'Layanan Interior Batam', 'Kontraktor Interior Batam', 'Penawaran Interior Batam']}
+>
+  <section class="hero hero-page">
+    <div class="container">
+      <p class="eyebrow">Solusi Ruangan &amp; Fabrikasi Batam</p>
+      <h1>Penawaran Jasa Desain &amp; Kontraktor Interior di Batam</h1>
+      <p class="lead">Pilih penawaran jasa interior yang sesuai kebutuhan hunian atau ruang usaha Anda. Diproduksi langsung di workshop fisik kami di Batam Center dengan material tahan iklim pesisir, visualisasi 3D realistis, dan gratis survey ke seluruh wilayah Batam.</p>
+    </div>
+  </section>
+
+  <section class="container sections">
+    <div class="card-grid">
+      {services.map((s) => (
+        <ServiceCard
+          href={`/layanan/${s.id}/`}
+          title={s.data.title}
+          shortTitle={s.data.shortTitle}
+          description={s.data.intro.slice(0, 150) + '…'}
+          image={s.data.heroImage}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

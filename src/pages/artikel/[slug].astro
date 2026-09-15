@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../config/site';
+import { getCategoryByPillar, SERVICE_CATEGORIES } from '../../config/categories';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => {
+    const category = getCategoryByPillar(article.data.pillar);
+    
+    // Ambil artikel terkait dari kategori/layanan yang sama
+    const related = articles
+      .filter((a) => a.id !== article.id && (a.data.pillar === article.data.pillar || (article.data.pillar === 'komersial' && a.data.pillar === 'interior-kantor')))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+      .slice(0, 4)
+      .map((a) => ({
+        href: `/artikel/${a.id}/`,
+        title: a.data.title,
+        image: a.data.heroImage,
+        date: a.data.pubDate,
+      }));
+
+    return {
+      params: { slug: article.id },
+      props: { article, category, related },
+    };
+  });
+}
+
+const { article, category, related } = Astro.props;
+const { Content } = await render(article);
+const d = article.data;
+const url = new URL(`/artikel/${article.id}/`, SITE.domain).href;
+---
+
+<ArticleLayout
+  title={d.title}
+  description={d.description}
+  keywords={d.keywords}
+  heroImage={d.heroImage}
+  pubDate={d.pubDate}
+  updatedDate={d.updatedDate}
+  author={d.author}
+  url={url}
+  image={new URL(d.heroImage, SITE.domain).href}
+  category={category}
+  categories={SERVICE_CATEGORIES}
+  relatedArticles={related}
+  draft={d.draft}
+>
+  <Content />
+</ArticleLayout>

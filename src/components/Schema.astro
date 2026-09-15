@@ -1,0 +1,141 @@
+---
+import { SITE } from '../config/site';
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  type: 'localbusiness' | 'organization' | 'service' | 'article' | 'breadcrumb';
+  // service
+  serviceName?: string;
+  serviceUrl?: string;
+  serviceDesc?: string;
+  // article
+  article?: {
+    title: string;
+    description: string;
+    url: string;
+    image: string;
+    author: string;
+    datePublished: string;
+    dateModified: string;
+  };
+  // breadcrumb
+  items?: { name: string; url: string }[];
+}
+
+const { type, serviceName, serviceUrl, serviceDesc, article, items } = Astro.props;
+
+const orgId = `${SITE.domain}/#organization`;
+const localId = `${SITE.domain}/#localbusiness`;
+
+// Buka jam operasional -> schema
+const openingHoursSpecification = SITE.openingHours.map((o) => ({
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: o.days,
+  opens: o.opens,
+  closes: o.closes,
+}));
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': orgId,
+  name: SITE.name,
+  url: SITE.domain,
+  logo: `${SITE.domain}/favicon.svg`,
+  sameAs: Object.values(SITE.socials),
+};
+
+const localSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': localId,
+  name: SITE.name,
+  legalName: SITE.legalName,
+  url: SITE.domain,
+  telephone: SITE.phone,
+  email: SITE.email,
+  priceRange: SITE.priceRange,
+  image: `${SITE.domain}/favicon.svg`,
+  description: SITE.description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address.streetAddress,
+    addressLocality: SITE.address.addressLocality,
+    addressRegion: SITE.address.addressRegion,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.addressCountry,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  areaServed: SITE.serviceAreas.map((a) => ({
+    '@type': 'City',
+    name: a,
+  })),
+  openingHoursSpecification,
+  sameAs: Object.values(SITE.socials),
+};
+
+let schema: Record<string, unknown> = {};
+
+if (type === 'localbusiness') {
+  schema = localSchema;
+} else if (type === 'organization') {
+  schema = orgSchema;
+} else if (type === 'service') {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: serviceName,
+    description: serviceDesc,
+    serviceType: serviceName,
+    url: serviceUrl,
+    provider: { '@id': localId },
+    areaServed: SITE.serviceAreas.map((a) => ({ '@type': 'City', name: a })),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Layanan Interior Batam',
+      itemListElement: SITE.serviceAreas.map((a) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: `${serviceName} ${a}` },
+        areaServed: { '@type': 'City', name: a },
+      })),
+    },
+  };
+} else if (type === 'article' && article) {
+  const authorUrl = article.authorUrl || (article.author === 'Muhammad Zazuli' ? 'https://www.facebook.com/joel.avellokids' : SITE.domain);
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description,
+    image: article.image,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+      url: authorUrl,
+      sameAs: [authorUrl],
+    },
+    publisher: { '@id': orgId },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': article.url },
+    keywords: '',
+  };
+} else if (type === 'breadcrumb' && items) {
+  schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      item: it.url,
+    })),
+  };
+}
+---
+
+<JsonLd data={schema} />

@@ -1,0 +1,142 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Schema from '../components/Schema.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import { SITE, waLink } from '../config/site';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const servicesBase = new URL('/layanan/', SITE.domain).href;
+
+// Function to extract short title from full title
+function getShortTitle(fullTitle: string): string {
+  // Remove "Batam:" and everything after it for short title
+  const batamIndex = fullTitle.indexOf('Batam');
+  if (batamIndex !== -1) {
+    return fullTitle.substring(0, batamIndex).trim();
+  }
+  
+  // Remove ": Panduan" and everything after it for short title
+  const colonIndex = fullTitle.indexOf(':');
+  if (colonIndex !== -1) {
+    return fullTitle.substring(0, colonIndex).trim();
+  }
+  
+  // Fallback: return first 2-3 words
+  const words = fullTitle.split(' ');
+  if (words.length > 3) {
+    return words.slice(0, 2).join(' ');
+  }
+  return fullTitle;
+}
+---
+
+<BaseLayout
+  title={undefined}
+  description={SITE.description}
+  keywords={['Interior Batam', 'Jasa Desain Interior Batam', 'Kontraktor Interior Batam', 'Kitchen Set Batam', 'Interior Apartemen Batam']}
+  type="website"
+>
+  {/* Homepage entity schemas */}
+  <Schema type="localbusiness" />
+  <Schema
+    type="organization"
+    /* extra WebSite + Sitelinks SearchBox */
+  />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE.domain}/#website`,
+    url: SITE.domain,
+    name: SITE.name,
+    description: SITE.description,
+    inLanguage: 'id-ID',
+    publisher: { '@id': `${SITE.domain}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE.domain}/artikel/?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  })}></script>
+
+  {/* 1. HERO */}
+  <section class="hero hero-home">
+    <div class="container">
+      <div class="hero-text">
+        <p class="eyebrow">Jasa Interior Profesional Batam</p>
+        <h1>Kontraktor Interior Batam</h1>
+        <p class="tagline">Wujudkan Hunian &amp; Ruang Usaha Impian Anda</p>
+        <p class="lead reveal">
+          Spesialis custom furniture, kitchen set, interior apartemen, rumah tinggal, dan ruko kantor di seluruh wilayah Batam
+          dengan pengerjaan rapi, bergaransi, dan material berkualitas anti-lembap.
+        </p>
+        <div class="hero-cta reveal">
+          <a class="wa-cta" href={waLink('Halo, saya ingin jadwalkan survey gratis interior di Batam.')} target="_blank" rel="noopener">Jadwalkan Survey Gratis</a>
+          <a class="ghost-cta" href="/portofolio/">Lihat Galeri Proyek</a>
+        </div>
+      </div>
+      <ul class="usp reveal-stagger">
+        <li><span class="usp-check">✓</span> Gratis Survey Lokasi Batam</li>
+        <li><span class="usp-check">✓</span> Visual 3D Rendering Realistis</li>
+        <li><span class="usp-check">✓</span> Workshop Milik Sendiri</li>
+        <li><span class="usp-check">✓</span> Garansi Pemeliharaan</li>
+      </ul>
+    </div>
+  </section>
+
+  {/* 2. LAYANAN UTAMA */}
+  <section class="container sections reveal">
+    <p class="eyebrow">Layanan Kami</p>
+    <h2>Layanan Desain dan Pengerjaan Interior di Batam</h2>
+    <div class="card-grid">
+      {services.map((s) => (
+        <ServiceCard
+          href={`/layanan/${s.id}/`}
+          title={s.data.title}
+          shortTitle={s.data.shortTitle || getShortTitle(s.data.title)}
+          description={s.data.intro.slice(0, 140) + '…'}
+          image={s.data.heroImage}
+        />
+      ))}
+    </div>
+  </section>
+
+  {/* 3. MENGAPA MEMILIH KAMI */}
+  <section class="container sections reveal">
+    <p class="eyebrow">Mengapa Memilih Kami</p>
+    <h2>Keunggulan Kontraktor Interior Berpengalaman di Batam</h2>
+    <div class="card-grid why-grid">
+      <article class="feature"><span class="feature-num">01</span><h3>Material Tahan Iklim Pesisir</h3><p>Memahami iklim pesisir tropis Batam dengan rekomendasi material anti rayap, anti lembap, dan fitting anti karat.</p></article>
+      <article class="feature"><span class="feature-num">02</span><h3>Workshop &amp; Tukang Sendiri</h3><p>Bukan makelar pengerjaan; produksi langsung di workshop lokal Batam untuk memangkas biaya perantara.</p></article>
+      <article class="feature"><span class="feature-num">03</span><h3>Transparansi RAB</h3><p>Rencana Anggaran Biaya terperinci tanpa biaya siluman.</p></article>
+    </div>
+  </section>
+
+  {/* 4. ALUR KERJA */}
+  <section class="container sections reveal">
+    <p class="eyebrow">Cara Kerja</p>
+    <h2>4 Langkah Mudah Mewujudkan Interior Impian</h2>
+    <ol class="steps">
+      <li><span class="step-num">1</span><strong>Konsultasi &amp; Survey Lokasi</strong><em>Pengukuran langsung ke tempat Anda.</em></li>
+      <li><span class="step-num">2</span><strong>Desain Layout &amp; Visualisasi 3D</strong><em>Revisi hingga cocok.</em></li>
+      <li><span class="step-num">3</span><strong>Produksi di Workshop</strong><em>Fabrikasi presisi menggunakan mesin modern.</em></li>
+      <li><span class="step-num">4</span><strong>Instalasi &amp; Finishing Bersih</strong><em>Pemasangan di lokasi dengan garansi resmi.</em></li>
+    </ol>
+  </section>
+
+  {/* 5. AREA LAYANAN + TESTIMONI */}
+  <section class="container sections reveal">
+    <p class="eyebrow">Area &amp; Testimoni</p>
+    <h2>Area Layanan &amp; Kata Klien Kami di Batam</h2>
+    <p>Area jangkauan: <strong>{SITE.serviceAreas.join(', ')}</strong>.</p>
+    <p class="muted">Tampilan ulasan Google Maps / video review pemilik rumah di Batam (embed nanti).</p>
+    <WhatsAppCTA />
+  </section>
+
+  {/* 6. FINAL CTA */}
+  <section class="container final-cta reveal">
+    <h2>Konsultasikan Kebutuhan Ruangan Anda Sekarang – Gratis Survey Seluruh Batam!</h2>
+    <WhatsAppCTA full />
+  </section>
+</BaseLayout>

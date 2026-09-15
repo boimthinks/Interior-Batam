@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Blokir halaman admin/internal jika ada (tidak ada untuk static site ini)
+Disallow: /api/
+
+# Sitemap (dihasilkan oleh @astrojs/sitemap)
+Sitemap: https://interiorbatam.web.id/sitemap-index.xml

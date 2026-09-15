@@ -1,0 +1,622 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Schema from '../components/Schema.astro';
+import WhatsAppCTA from '../components/WhatsAppCTA.astro';
+import { SITE, waLink } from '../config/site';
+
+const contactUrl = new URL('/kontak/', SITE.domain).href;
+
+const contactChannels = [
+  {
+    icon: '💬',
+    title: 'WhatsApp Resmi',
+    desc: 'Konsultasi cepat, kirim foto denah/ruangan, dan jadwal survey.',
+    value: SITE.phone,
+    actionText: 'Chat WhatsApp Sekarang',
+    href: waLink('Halo Interior Batam, saya ingin konsultasi proyek interior ruangan saya.'),
+    badge: 'Respons Cepat',
+  },
+  {
+    icon: '📞',
+    title: 'Telepon Langsung',
+    desc: 'Bicara langsung dengan representatif kami untuk pertanyaan mendesak.',
+    value: SITE.phone,
+    actionText: 'Hubungi via Telepon',
+    href: `tel:${SITE.phone}`,
+    badge: 'Panggilan Langsung',
+  },
+  {
+    icon: '✉️',
+    title: 'Email Resmi',
+    desc: 'Kirimkan berkas denah arsitek, TOR proyek, atau penawaran komersial.',
+    value: SITE.email,
+    actionText: 'Kirim Email',
+    href: `mailto:${SITE.email}`,
+    badge: 'Resmi',
+  },
+  {
+    icon: '🕒',
+    title: 'Jam Kerja & Survey',
+    desc: 'Kunjungan workshop & survey lokasi properti di Batam.',
+    value: 'Senin–Jumat: 09:00–17:00 | Sabtu: 09:00–15:00',
+    actionText: 'Jadwalkan Survey',
+    href: waLink('Halo, saya ingin menjadwalkan kunjungan survey gratis ke lokasi saya.'),
+    badge: 'WIB',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Apakah survey lokasi dan konsultasi awal benar-benar gratis?',
+    a: 'Ya, tim kami menyediakan layanan survey dan pengukuran langsung ke seluruh wilayah Batam (Batam Center, Nagoya, Bengkong, Tiban, Batu Aji, Sekupang, Nongsa) secara gratis tanpa ikatan kontrak di awal.',
+  },
+  {
+    q: 'Bagaimana jika saya sudah memiliki gambar denah atau desain 3D sendiri?',
+    a: 'Sangat bisa! Anda cukup mengirimkan file desain atau denah via WhatsApp atau email. Tim estimator kami akan langsung menganalisis spesifikasi bahan dan menyusun rincian RAB fabrikasi.',
+  },
+  {
+    q: 'Berapa lama proses pembuatan furniture custom hingga siap pasang?',
+    a: 'Rata-rata waktu produksi untuk kitchen set atau wardrobe berkisar antara 2 hingga 3 minggu. Untuk renovasi full interior rumah atau apartemen berkisar antara 3 hingga 6 minggu, tergantung kompleksitas dan luas area.',
+  },
+  {
+    q: 'Apakah pengerjaan interior dilengkapi dengan garansi?',
+    a: 'Pasti. Kami memberikan garansi pemeliharaan untuk fungsi mekanis furniture (seperti rel laci, engsel hidrolik soft-close, dan sambungan edging) demi kenyamanan dan ketenangan jangka panjang Anda.',
+  },
+];
+---
+
+<BaseLayout
+  title="Kontak & Konsultasi Gratis – Interior Batam"
+  description="Hubungi kontraktor interior Batam untuk konsultasi desain, pembuatan kitchen set, furniture custom, dan renovasi. Gratis survey ke seluruh kecamatan di Batam."
+  keywords={[
+    'Kontak Interior Batam',
+    'Alamat Interior Batam',
+    'Konsultasi Desain Interior Batam',
+    'Survey Gratis Interior Batam',
+    'Nomor WhatsApp Interior Batam',
+  ]}
+>
+  <Schema type="localbusiness" />
+  <Schema items={[{ name: 'Kontak', url: contactUrl }]} type="breadcrumb" />
+
+  {/* ContactPage Schema */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${contactUrl}#contactpage`,
+    url: contactUrl,
+    name: 'Kontak & Konsultasi Interior Batam',
+    description: 'Hubungi tim Interior Batam untuk konsultasi, estimasi RAB, dan survey lokasi gratis.',
+    inLanguage: 'id-ID',
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+    mainEntity: {
+      '@type': 'HomeAndConstructionBusiness',
+      name: SITE.name,
+      telephone: SITE.phone,
+      email: SITE.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: SITE.address.streetAddress,
+        addressLocality: SITE.address.addressLocality,
+        addressRegion: SITE.address.addressRegion,
+        postalCode: SITE.address.postalCode,
+        addressCountry: SITE.address.addressCountry,
+      },
+    },
+  })}></script>
+
+  {/* 1. HERO SECTION */}
+  <section class="hero hero-page">
+    <div class="container">
+      <Breadcrumbs items={[{ name: 'Kontak', url: contactUrl }]} />
+      <span class="eyebrow">Hubungi Kami</span>
+      <h1>Kontak &amp; Konsultasi Interior Batam</h1>
+      <p class="lead">
+        Diskusikan impian ruangan Anda bersama desainer dan tukang ahli kami. Kami siap melakukan survey lokasi dan pengukuran gratis ke seluruh wilayah Kota Batam.
+      </p>
+    </div>
+  </section>
+
+  {/* 2. CHANNELS GRID */}
+  <section class="container sections" style="padding-top: clamp(32px, 4vw, 56px);">
+    <div class="channels-grid">
+      {contactChannels.map((c) => (
+        <div class="channel-card">
+          <div class="channel-top">
+            <span class="channel-icon">{c.icon}</span>
+            <span class="channel-badge">{c.badge}</span>
+          </div>
+          <h3>{c.title}</h3>
+          <p class="channel-desc">{c.desc}</p>
+          <div class="channel-val">{c.value}</div>
+          <a href={c.href} class="channel-btn" target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined}>
+            {c.actionText} →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* 3. INTERACTIVE FORM & LOCATION SECTION */}
+  <section class="container sections">
+    <div class="main-contact-grid">
+      {/* KIRI: FORMULIR KONSULTASI INTERAKTIF */}
+      <div class="form-container">
+        <span class="eyebrow">Formulir Cepat</span>
+        <h2>Rencanakan Proyek Ruangan Anda</h2>
+        <p class="form-sub">
+          Isi formulir ringkas berikut untuk langsung terhubung ke WhatsApp desainer kami dengan data kebutuhan ruangan yang rapi.
+        </p>
+
+        <form id="contact-consult-form" class="consult-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-nama">Nama Lengkap *</label>
+              <input type="text" id="f-nama" name="nama" placeholder="Contoh: Pak Hendra / Ibu Linda" required />
+            </div>
+            <div class="form-group">
+              <label for="f-lokasi">Wilayah di Batam *</label>
+              <select id="f-lokasi" name="lokasi" required>
+                <option value="" disabled selected>Pilih Wilayah...</option>
+                {SITE.serviceAreas.map((area) => (
+                  <option value={area}>{area}</option>
+                ))}
+                <option value="Lainnya di Kepri">Wilayah Lainnya di Kepri</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-properti">Tipe Properti</label>
+              <select id="f-properti" name="properti">
+                <option value="Rumah Tinggal">Rumah Tinggal / Subsidi</option>
+                <option value="Apartemen (Studio/2BR)">Apartemen (Studio / 2BR)</option>
+                <option value="Ruko / Kantor">Ruko / Kantor</option>
+                <option value="Kafe / Resto / Komersial">Kafe / Resto / Komersial</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-layanan">Layanan yang Dibutuhkan</label>
+              <select id="f-layanan" name="layanan">
+                <option value="Kitchen Set Dapur">Kitchen Set Dapur</option>
+                <option value="Kamar Tidur & Lemari Wardrobe">Kamar Tidur &amp; Wardrobe</option>
+                <option value="Custom Furniture Ruang Tamu">Custom Furniture Ruang Tamu</option>
+                <option value="Full Interior 1 Unit">Full Interior 1 Unit</option>
+                <option value="Renovasi & Sipil">Renovasi &amp; Pengerjaan Sipil</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-pesan">Deskripsi / Catatan Tambahan</label>
+            <textarea id="f-pesan" name="pesan" rows="3" placeholder="Contoh: Ukuran dapur kira-kira 2.5 x 2 meter, ingin konsep minimalis modern dengan warna putih dan aksen kayu."></textarea>
+          </div>
+
+          <button type="submit" class="wa-submit-btn">
+            💬 Kirim Konsultasi ke WhatsApp Kami
+          </button>
+          <small class="form-note">Data Anda aman dan langsung diarahkan ke nomor resmi WhatsApp {SITE.phone}.</small>
+        </form>
+      </div>
+
+      {/* KANAN: ALAMAT LENGKAP & PETA WORKSHOP */}
+      <div class="loc-details-wrap">
+        <span class="eyebrow">Alamat Fisik</span>
+        <h2>Kunjungi Workshop &amp; Kantor</h2>
+        <p class="muted">
+          Silakan berkunjung langsung untuk melihat contoh sampel bahan, finishing HPL, dan proses perakitan furniture custom di workshop kami.
+        </p>
+
+        <div class="address-card">
+          <div class="addr-header">
+            <span class="addr-tag">Workshop Produksi</span>
+            <span class="addr-star">★ Pusat Fabrikasi</span>
+          </div>
+          <h4>Komplek Ruko Valley Park</h4>
+          <p>
+            {SITE.workshopAddress.streetAddress},<br />
+            {SITE.workshopAddress.addressLocality}, Kepri {SITE.workshopAddress.postalCode}
+          </p>
+          <div class="addr-actions">
+            <a href="https://maps.google.com/?q=Komplek+Ruko+Valley+Park+Batam+Center" target="_blank" rel="noopener" class="mini-btn">
+              Buka di Google Maps ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="address-card">
+          <div class="addr-header">
+            <span class="addr-tag" style="background:#f1f5f9; color:#334155;">Kantor Operasional</span>
+          </div>
+          <h4>Ruko Mega Legenda 2</h4>
+          <p>
+            {SITE.officeAddress.streetAddress},<br />
+            {SITE.officeAddress.addressLocality}, Kepri {SITE.officeAddress.postalCode}
+          </p>
+        </div>
+
+        {/* PETA GOOGLE MAPS EMBED */}
+        <div class="map-embed-card">
+          <iframe
+            title="Peta Lokasi Workshop Interior Batam di Batam Center"
+            src={SITE.mapsEmbed}
+            width="100%"
+            height="260"
+            style="border:0; border-radius:12px; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 4. WILAYAH SURVEY GRATIS */}
+  <section class="coverage-section">
+    <div class="container">
+      <div class="coverage-inner">
+        <div class="coverage-text">
+          <span class="eyebrow">Cakupan Area</span>
+          <h2>Layanan Survey &amp; Pengukuran Gratis di Seluruh Batam</h2>
+          <p>
+            Tim teknisi dan desainer kami bergerak fleksibel ke setiap penjuru Batam. Tidak ada biaya tambahan untuk kunjungan survey dan pengukuran ruang pertama Anda.
+          </p>
+          <div class="areas-pill-grid">
+            {SITE.serviceAreas.map((area) => (
+              <span class="area-pill">📍 {area}</span>
+            ))}
+          </div>
+        </div>
+        <div class="coverage-cta-side">
+          <div class="cta-box-glow">
+            <h3>Punya Pertanyaan Spesifik?</h3>
+            <p>Hubungi admin kami sekarang untuk mencocokkan jadwal survey yang nyaman dengan waktu luang Anda.</p>
+            <WhatsAppCTA label="Hubungi WhatsApp (+62 813-7370-3639)" message="Halo Interior Batam, saya ingin booking jadwal survey interior." full={true} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 5. FAQ KONTAK & SURVEY */}
+  <section class="container sections">
+    <div class="section-header-center">
+      <span class="eyebrow">Tanya Jawab</span>
+      <h2>Pertanyaan Umum Seputar Konsultasi &amp; Survey</h2>
+      <p class="muted">Hal yang sering ditanyakan sebelum memulai proyek interior bersama kami.</p>
+    </div>
+
+    <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.q}</summary>
+          <div class="faq-answer">
+            <p>{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {/* SCRIPT HANDLER UNTUK FORM KE WHATSAPP */}
+  <script is:inline define:vars={{ whatsappNumber: SITE.whatsapp }}>
+    const form = document.getElementById('contact-consult-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nama = document.getElementById('f-nama')?.value || '';
+        const lokasi = document.getElementById('f-lokasi')?.value || '';
+        const properti = document.getElementById('f-properti')?.value || '';
+        const layanan = document.getElementById('f-layanan')?.value || '';
+        const pesan = document.getElementById('f-pesan')?.value || '-';
+
+        const text = `Halo Interior Batam,\n\nSaya ingin konsultasi & jadwal survey interior:\n• Nama: ${nama}\n• Lokasi Batam: ${lokasi}\n• Tipe Properti: ${properti}\n• Kebutuhan: ${layanan}\n• Catatan: ${pesan}\n\nMohon info estimasi dan ketersediaan jadwal survey. Terima kasih!`;
+
+        const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+        window.open(waUrl, '_blank');
+      });
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  .channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .channel-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .channel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .channel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .channel-icon {
+    font-size: 1.8rem;
+  }
+  .channel-badge {
+    background: #eef2f8;
+    color: var(--c-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .channel-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.15rem;
+    color: var(--c-fg);
+  }
+  .channel-desc {
+    font-size: 0.88rem;
+    color: var(--c-muted);
+    margin: 0 0 14px 0;
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+  .channel-val {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--c-fg);
+    margin-bottom: 16px;
+    word-break: break-word;
+  }
+  .channel-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--c-primary);
+    transition: color 0.2s var(--ease);
+  }
+  .channel-btn:hover {
+    color: var(--c-gold);
+    text-decoration: none;
+  }
+
+  .main-contact-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .form-container {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: clamp(28px, 4vw, 36px);
+    box-shadow: var(--shadow-md);
+  }
+  .form-container h2 {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  }
+  .form-sub {
+    color: var(--c-muted);
+    font-size: 0.94rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .consult-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--c-fg);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(24, 34, 58, 0.16);
+    background: #fdfdfd;
+    font-family: inherit;
+    font-size: 0.94rem;
+    color: var(--c-fg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.12);
+  }
+  .wa-submit-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 24px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.28);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+  }
+  .wa-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(16, 185, 129, 0.38);
+  }
+  .form-note {
+    text-align: center;
+    color: var(--c-muted);
+    font-size: 0.78rem;
+  }
+
+  .loc-details-wrap h2 {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  }
+  .address-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-top: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .addr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .addr-tag {
+    background: #eef2f8;
+    color: var(--c-primary-d);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .addr-star {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--c-gold);
+  }
+  .address-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.12rem;
+    color: var(--c-fg);
+  }
+  .address-card p {
+    margin: 0 0 14px 0;
+    font-size: 0.92rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+  .mini-btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-primary);
+  }
+
+  .map-embed-card {
+    margin-top: 20px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .coverage-section {
+    background: #f0f4fa;
+    padding: clamp(48px, 6vw, 72px) 0;
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .coverage-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 36px;
+    align-items: center;
+  }
+  .coverage-text h2 {
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+  .coverage-text p {
+    color: var(--c-muted);
+    font-size: 1.02rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  .areas-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .area-pill {
+    background: var(--c-surface);
+    color: var(--c-primary-d);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 64, 175, 0.12);
+    box-shadow: 0 1px 4px rgba(24, 34, 58, 0.04);
+  }
+  .cta-box-glow {
+    background: var(--c-surface);
+    border: 1px solid var(--c-gold-soft);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+  }
+  .cta-box-glow h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+  }
+  .cta-box-glow p {
+    margin: 0 0 20px 0;
+    font-size: 0.92rem;
+    color: var(--c-muted);
+    line-height: 1.6;
+  }
+
+  .section-header-center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+  }
+  .faq-answer {
+    padding: 8px 0 14px;
+    font-size: 0.94rem;
+    color: var(--c-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .main-contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .coverage-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
