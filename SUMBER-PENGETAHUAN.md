@@ -75,36 +75,19 @@ draft: true
 ```
 
 ## 7. Daftar Artikel Terbit
-1. `aluminium-acp-vs-multipleks-hpl-kabinet-sink-batam` - Aluminium ACP vs Multipleks HPL untuk Kabinet Bawah Sink di Batam
-2. `biaya-kitchen-set-aluminium-batam-per-meter` - Bedah Biaya Pembuatan Kitchen Set Aluminium Batam per Meter Lari
-3. `material-furnitur-apartemen-airbnb-batam` - Daftar Material Furnitur yang Tahan Banting untuk Unit Apartemen Sewa Harian (AirBnB) di Batam
-4. `desain-drop-ceiling-plafon-gypsum-led-batam` - Desain Drop Ceiling Plafon Gypsum dengan Pencahayaan Indirect LED Strip Warm White
-5. `desain-interior-studio-citraplaza-nagoya-batam` - Desain Interior Modular Unit Studio 24m² di CitraPlaza Nagoya Batam
-6. `desain-teras-carport-rumah-subsidi-batam` - Desain Teras Rumah Subsidi Sekaligus Carport Mobil
-7. `estimasi-biaya-interior-apartemen-sewa-batam` - Estimasi Biaya Full Interior Unit 1BR/2BR Apartemen Batam untuk Sewa
-8. `kontrak-kerja-kontraktor-interior-komersial-batam` - Format Kontrak Kerja Kontraktor Interior Komersial di Batam
-9. `instalasi-kabel-tersembunyi-backdrop-tv-batam` - Instalasi Jalur Kabel Tersembunyi (Concealed Cable Trench) pada Backdrop TV Minimalis
-10. `kalkulasi-listrik-ac-ruang-kerja-ruko-batam` - Kalkulasi Kebutuhan Beban Listrik dan Titik AC untuk Ruang Kerja Ruko Batam
-11. `konstruksi-dapur-semi-terbuka-rumah-batam` - Konstruksi Dapur Semi-Terbuka Rumah Batam
-12. `partisi-kedap-suara-ruang-rapat-kantor-batam` - Konstruksi Dinding Partisi Kedap Suara untuk Ruang Rapat Kantor Logistik di Batu Ampar Batam
-13. `konstruksi-backdrop-tv-gantung-bata-ringan-batam` - Konstruksi Rangka Backdrop TV Gantung pada Dinding Bata Ringan Perumahan Batam
-14. `lemari-pakaian-knock-down-lift-apartemen-batam` - Konstruksi Lemari Pakaian Knock-Down 3 Seksi untuk Lift Apartemen Batam
-15. `bahaya-engsel-berkarat-pesisir-batam-sus-304` - Mengapa Engsel Soft-Close Murah Berkarat di Pesisir Batam (Standar SUS 304)
-16. `panduan-menutup-sisa-tanah-belakang-rumah-subsidi-batam` - Panduan Menutup Sisa Tanah Belakang Rumah Subsidi Tipe 28/36 di Batam
-17. `renovasi-ruko-kantor-nagoya-batam-center` - Panduan Renovasi Ruko 3 Lantai Menjadi Kantor Operasional di Nagoya & Batam Center
-18. `partisi-ruang-tamu-kisi-kayu-vs-aluminium-batam` - Partisi Ruang Tamu dan Ruang Makan: Kisi Kayu Solid vs Aluminium vs Rangka HPL
-19. `top-table-granit-nero-black-vs-solid-surface-batam` - Top Table Granit Nero Black vs Solid Surface di Batam Center
-20. `izin-fitting-out-apartemen-pollux-habibie-batam` - Prosedur Izin Kerja Fitting Out di Apartemen Meisterstadt Pollux Habibie Batam
-21. `izin-renovasi-ruko-dinas-tata-kota-batam` - Prosedur Pengurusan Izin Renovasi Bangunan Ruko ke Pengelola Kawasan & Dinas Tata Kota Batam
-22. `regulasi-renovasi-rumah-subsidi-bp-batam-btn` - Regulasi Renovasi Rumah Subsidi BP Batam & BTN
-23. `renovasi-interior-coffee-shop-kafe-batam-center` - Renovasi Interior Coffee Shop & Kafe di Batam Center
-24. `biaya-renovasi-dapur-teras-rumah-subsidi-batu-aji-batam` - Rincian Biaya Riil Paket Renovasi Dapur & Teras Rumah Subsidi di Batu Aji Batam
-25. `solusi-dinding-rembes-shared-wall-rumah-subsidi-batam` - Solusi Mengatasi Dinding Belakang Rumah Subsidi yang Rembes (Shared Wall)
-26. `standar-inspeksi-laser-leveling-furnitur-batam` - Standar Inspeksi Laser Leveling untuk Memastikan Lemari Presisi di Batam
-27. `pipa-gas-tanam-lpg-exhaust-hood-dapur-batam` - Standar Keamanan Pemasangan Pipa Gas Tanam LPG dan Exhaust Hood di Batam
-28. `modifikasi-plafon-sensor-kebakaran-formosa-residence-batam` - Standar Modifikasi Plafon dan Sensor Kebakaran Formosa Residence Nagoya Batam
-29. `desain-ruang-tamu-memanjang-tipe-36-batam` - Trik Desain Ruang Tamu Rumah Tipe 36 Batam yang Memanjang
-30. `interior-terbuka-rumah-subsidi-30-60-batam` - Trik Menata Interior Terbuka Rumah Subsidi Tipe 30/60 Batam
+
+Saat ini terdapat 9 artikel terbit dengan konten penuh (E-E-A-T):
+1. `kabinet-sink-aluminium-vs-multipleks-batam` - Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam
+2. `biaya-kitchen-set-aluminium-per-meter-batam` - Bedah Biaya Kitchen Set Aluminium Batam per Meter Lari
+3. `biaya-renovasi-dapur-teras-batu-aji-batam` - Rincian Biaya Renovasi Dapur & Teras Rumah Subsidi Batu Aji
+4. `dapur-semi-terbuka-rumah-batam` - Konstruksi Dapur Semi-Terbuka Rumah Batam
+5. `drop-ceiling-plafon-gypsum-led-batam` - Drop Ceiling Plafon Gypsum dengan LED Strip Warm White Batam
+6. `estimasi-biaya-interior-apartemen-sewa-batam` - Panduan Lengkap Estimasi Biaya Full Interior Apartemen Sewa di Batam Analisis Teknis dan Simulasi RAB
+7. `instalasi-kabel-tersembunyi-backdrop-tv` - Panduan Instalasi Kabel Tersembunyi pada Backdrop TV Standar Teknis dan Solusi Anti-Kusut
+8. `modifikasi-plafon-sensor-kebakaran-formosa` - Modifikasi Plafon & Sensor Kebakaran Formosa Residence Batam
+9. `backdrop-tv-gantung-bata-ringan-batam` - Rekayasa Pemasangan Backdrop TV Gantung pada Dinding Bata Ringan Batam
+
+*(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 
 ## 8. Topik Rekomendasi Artikel
 1. Tren interior rumah Batam 2026

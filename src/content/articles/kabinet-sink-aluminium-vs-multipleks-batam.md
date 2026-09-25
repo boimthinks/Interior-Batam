@@ -1,17 +1,17 @@
 ---
-title: "Aluminium ACP vs Multipleks HPL untuk Kabinet Bawah Sink di Batam Uji Kebocoran Pipa dan Serangan Rayap Tanah"
-description: "Perbandingan teknis Aluminium ACP vs Multipleks HPL untuk kabinet bawah sink di Batam. Uji kebocoran pipa, serangan rayap tanah, dan solusi dapur hibrida awet."
+title: "Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam"
+description: "Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam — studi kasus & panduan praktis dari pengalaman lapangan tim interior Batam."
 keywords:
   - Kitchen Set Aluminium Batam
   - Aluminium ACP Dapur Batam
   - Kabinet Bawah Sink Batam
   - Kitchen Set Anti Rayap Batam
   - Multipleks HPL Batam
-heroImage: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxQsrIGv7nHPCRznbpAOLL0i4LpU3Mpca2FCIhiink3WxKi2S3o93NMTkMdBZgMhyn-SVGoVYV4F9a0d7BWmweIqqJQPnjk2pvY338yVYLiamqxqYGt8U7RMAsKCefNrQYCp8s0xBMcdFvEVFOm8wr5tytLn9KGEhmrCgdUx2TVTV_on6D9FxybDo47qgs/s800/kabinet%20kitchenset%20bahan%20Multipleks%20HPL%20untuk%20Kabinet%20Bawah%20Sink_poco.webp
+heroImage: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguRi99eK-PwHM-MAs6LFwJAy28iwd7F2TGU7Hy8Zdt29kx9EzBp-Y75CdaPxJihveh9HG_9Ef_aAtnSzdgOXj1BnwdN5lma8vrSmd0BtfAXkGcJGGwVS4gkKxG_EMqADKjefMMQBe6nH94Dlffa0iLCQ0TSPwpERIq6xPbTdhLvDQuLyQHvWWgrx8t4yVR/s600/Kabinet%20Bawah%20Sink%20Dapur%20Aluminium%20ACP_poco.webp
 pillar: kitchen-set
 author: Muhammad Zazuli
-pubDate: 2026-09-15
-updatedDate: 2026-09-15
+pubDate: 2026-09-16
+updatedDate: 2026-09-16
 draft: false
 ---
 
@@ -21,7 +21,7 @@ Kondisi geografis Pulau Batam menghadirkan tantangan ganda bagi furnitur dapur. 
 
 Tulisan ini membedah perbandingan teknis langsung antara rangka Aluminium Composite Panel (ACP) melawan Multipleks lapis High Pressure Laminate (HPL) berdasarkan pengalaman perbaikan di lapangan.
 
-## Anatomi Masalah di Bawah Sink: Dua Ancaman Utama Dapur Batam
+## Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam
 
 Kompartemen bawah wastafel bukan sekadar tempat menaruh panci atau tabung gas. Area ini menampung instalasi pipa pembuangan air kotor sekaligus menjadi titik pertemuan antara lantai semen dengan struktur kabinet.
 

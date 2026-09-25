@@ -15,7 +15,7 @@ export async function getStaticPaths() {
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
       .slice(0, 4)
       .map((a) => ({
-        href: `/artikel/${a.id}/`,
+        href: `/blog/${a.id}/`,
         title: a.data.title,
         image: a.data.heroImage,
         date: a.data.pubDate,
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 const { article, category, related } = Astro.props;
 const { Content } = await render(article);
 const d = article.data;
-const url = new URL(`/artikel/${article.id}/`, SITE.domain).href;
+const url = new URL(`/blog/${article.id}/`, SITE.domain).href;
 ---
 
 <ArticleLayout

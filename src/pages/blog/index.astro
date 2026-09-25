@@ -5,18 +5,18 @@ import ArticleCard from '../../components/ArticleCard.astro';
 import { SITE } from '../../config/site';
 
 const articles = (await getCollection('articles'))
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout
-  title="Artikel & Inspirasi Interior Batam"
+  title="Blog & Inspirasi Interior Batam"
   description="Kumpulan studi kasus, panduan teknis, dan inspirasi interior Batam: kitchen set, rumah subsidi, apartemen, ruang tamu, dan ruko komersial."
   keywords={['Artikel Interior Batam', 'Tips Interior Batam']}
 >
   <section class="hero hero-page">
     <div class="container">
       <p class="eyebrow">Blog & Edukasi</p>
-      <h1>Artikel & Inspirasi Interior Batam</h1>
+      <h1>Blog & Inspirasi Interior Batam</h1>
       <p class="lead">Panduan praktis, tips pemilihan material, dan studi kasus lapangan dari tim interior Batam.</p>
     </div>
   </section>
@@ -25,7 +25,7 @@ const articles = (await getCollection('articles'))
     <div class="card-grid">
       {articles.map((a) => (
         <ArticleCard
-          href={`/artikel/${a.id}/`}
+          href={`/blog/${a.id}/`}
           title={a.data.title}
           description={a.data.description}
           image={a.data.heroImage}

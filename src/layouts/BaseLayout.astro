@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import { SITE } from '../config/site';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
@@ -22,8 +23,18 @@ const props = Astro.props;
 <!doctype html>
 <html lang="id">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10786176296"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-10786176296');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
@@ -34,6 +45,7 @@ const props = Astro.props;
     <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
     <meta name="msapplication-TileColor" content="#1e40af" />
     <SEO {...props} />
+    <ClientRouter />
     {/* WebSite + Sitelinks SearchBox hanya di homepage (dicek di index.astro) */}
   </head>
   <body>
@@ -44,9 +56,9 @@ const props = Astro.props;
     <Footer />
 
     {/* Reveal on scroll — progressive: jika JS mati, kelas .reveal tetap tampil via fallback di bawah */}
-    <script is:inline>
+    <script is:inline data-astro-rerun>
       (function () {
-        var els = document.querySelectorAll('.reveal, .reveal-stagger');
+        var els = document.querySelectorAll('.reveal:not(.is-visible), .reveal-stagger:not(.is-visible)');
         if (!('IntersectionObserver' in window) || !els.length) {
           els.forEach(function (el) { el.classList.add('is-visible'); });
           return;

@@ -26,7 +26,7 @@ export async function getStaticPaths() {
           .filter((a) => meta.articlePillars.includes(a.data.pillar))
           .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
           .map((a) => ({
-            href: `/artikel/${a.id}/`,
+            href: `/blog/${a.id}/`,
             title: a.data.title,
             description: a.data.description,
             image: a.data.heroImage,

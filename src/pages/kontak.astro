@@ -9,7 +9,7 @@ const contactUrl = new URL('/kontak/', SITE.domain).href;
 
 const contactChannels = [
   {
-    icon: '💬',
+    icon: 'chat',
     title: 'WhatsApp Resmi',
     desc: 'Konsultasi cepat, kirim foto denah/ruangan, dan jadwal survey.',
     value: SITE.phone,
@@ -18,7 +18,7 @@ const contactChannels = [
     badge: 'Respons Cepat',
   },
   {
-    icon: '📞',
+    icon: 'phone',
     title: 'Telepon Langsung',
     desc: 'Bicara langsung dengan representatif kami untuk pertanyaan mendesak.',
     value: SITE.phone,
@@ -27,7 +27,7 @@ const contactChannels = [
     badge: 'Panggilan Langsung',
   },
   {
-    icon: '✉️',
+    icon: 'mail',
     title: 'Email Resmi',
     desc: 'Kirimkan berkas denah arsitek, TOR proyek, atau penawaran komersial.',
     value: SITE.email,
@@ -36,13 +36,13 @@ const contactChannels = [
     badge: 'Resmi',
   },
   {
-    icon: '🕒',
+    icon: 'schedule',
     title: 'Jam Kerja & Survey',
     desc: 'Kunjungan workshop & survey lokasi properti di Batam.',
     value: 'Senin–Jumat: 09:00–17:00 | Sabtu: 09:00–15:00',
     actionText: 'Jadwalkan Survey',
     href: waLink('Halo, saya ingin menjadwalkan kunjungan survey gratis ke lokasi saya.'),
-    badge: 'WIB',
+    badge: 'Terjadwal',
   },
 ];
 
@@ -124,14 +124,14 @@ const faqs = [
       {contactChannels.map((c) => (
         <div class="channel-card">
           <div class="channel-top">
-            <span class="channel-icon">{c.icon}</span>
+            <span class="channel-icon"><span class="material-icons">{c.icon}</span></span>
             <span class="channel-badge">{c.badge}</span>
           </div>
           <h3>{c.title}</h3>
           <p class="channel-desc">{c.desc}</p>
           <div class="channel-val">{c.value}</div>
           <a href={c.href} class="channel-btn" target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener' : undefined}>
-            {c.actionText} →
+             {c.actionText} <span class="material-icons">arrow_forward</span>
           </a>
         </div>
       ))}
@@ -195,8 +195,8 @@ const faqs = [
             <textarea id="f-pesan" name="pesan" rows="3" placeholder="Contoh: Ukuran dapur kira-kira 2.5 x 2 meter, ingin konsep minimalis modern dengan warna putih dan aksen kayu."></textarea>
           </div>
 
-          <button type="submit" class="wa-submit-btn">
-            💬 Kirim Konsultasi ke WhatsApp Kami
+           <button type="submit" class="wa-submit-btn">
+            <span class="material-icons">chat</span> Kirim Konsultasi ke WhatsApp Kami
           </button>
           <small class="form-note">Data Anda aman dan langsung diarahkan ke nomor resmi WhatsApp {SITE.phone}.</small>
         </form>
@@ -213,7 +213,7 @@ const faqs = [
         <div class="address-card">
           <div class="addr-header">
             <span class="addr-tag">Workshop Produksi</span>
-            <span class="addr-star">★ Pusat Fabrikasi</span>
+             <span class="addr-star"><span class="material-icons">star</span> Pusat Fabrikasi</span>
           </div>
           <h4>Komplek Ruko Valley Park</h4>
           <p>
@@ -222,7 +222,7 @@ const faqs = [
           </p>
           <div class="addr-actions">
             <a href="https://maps.google.com/?q=Komplek+Ruko+Valley+Park+Batam+Center" target="_blank" rel="noopener" class="mini-btn">
-              Buka di Google Maps ↗
+               Buka di Google Maps <span class="material-icons">open_in_new</span>
             </a>
           </div>
         </div>
@@ -266,7 +266,7 @@ const faqs = [
           </p>
           <div class="areas-pill-grid">
             {SITE.serviceAreas.map((area) => (
-              <span class="area-pill">📍 {area}</span>
+               <span class="area-pill"><span class="material-icons">location_on</span> {area}</span>
             ))}
           </div>
         </div>
@@ -302,7 +302,7 @@ const faqs = [
   </section>
 
   {/* SCRIPT HANDLER UNTUK FORM KE WHATSAPP */}
-  <script is:inline define:vars={{ whatsappNumber: SITE.whatsapp }}>
+  <script is:inline data-astro-rerun define:vars={{ whatsappNumber: SITE.whatsapp }}>
     const form = document.getElementById('contact-consult-form');
     if (form) {
       form.addEventListener('submit', function (e) {

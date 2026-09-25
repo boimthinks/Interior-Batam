@@ -13,13 +13,12 @@ const fmt = date ? date.toLocaleDateString('id-ID', { day: 'numeric', month: 'lo
 ---
 
 <a class="article-card" href={href}>
-  <PlaceholderImage label={title} src={image} ratio="16 / 9" />
+  <PlaceholderImage label={title} src={image} ratio="4 / 3" />
   <div class="article-card-body">
     <h3>{title}</h3>
     {description && <p>{description}</p>}
     <div class="article-meta">
       {fmt && <time datetime={date!.toISOString()}>{fmt}</time>}
-      <span class="card-link">Baca →</span>
     </div>
   </div>
 </a>

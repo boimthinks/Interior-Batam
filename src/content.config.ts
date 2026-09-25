@@ -38,7 +38,7 @@ const services = defineCollection({
 
 /**
  * Collection untuk 30 Artikel Penunjang (E-E-A-T).
- * URL: /artikel/[slug]/
+ * URL: /blog/[slug]/
  * Field `pillar` menghubungkan ke pilar induk (strategi silo vertikal).
  */
 const articles = defineCollection({

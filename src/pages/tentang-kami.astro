@@ -16,32 +16,32 @@ const stats = [
 
 const values = [
   {
-    icon: '🏭',
+    icon: 'build',
     title: 'Workshop & Tukang Sendiri',
     desc: 'Kami memproduksi seluruh furniture custom langsung di workshop Valley Park Batam Center. Bukan calo atau perantara pihak ketiga, sehingga mutu bahan dan presisi ukuran terjaga ketat.',
   },
   {
-    icon: '🌊',
+    icon: 'water_drop',
     title: 'Material Tahan Iklim Pesisir',
     desc: 'Udara Batam yang beriklim maritim dan lembap menuntut pemilihan material khusus. Kami mengutamakan plywood/blockboard grade pilihan, lem tahan lembap, finishing HPL rapi, dan engsel stainless steel anti karat.',
   },
   {
-    icon: '📐',
+    icon: 'design_services',
     title: 'Desain 3D Sebelum Produksi',
     desc: 'Setiap sudut ruangan dirancang dengan visualisasi 3D detail agar Anda dapat melihat tampilan nyata pencahayaan, warna, dan proporsinya sebelum proses perakitan kayu dimulai.',
   },
   {
-    icon: '📋',
+    icon: 'checklist',
     title: 'RAB Rinci & Pembayaran Bertahap',
     desc: 'Transparansi total dalam setiap item pekerjaan dan spesifikasi bahan. Tidak ada pembengkakan biaya di tengah pengerjaan. Sistem pembayaran dilakukan bertahap sesuai progres fisik.',
   },
   {
-    icon: '🛡️',
+    icon: 'shield',
     title: 'Jaminan Garansi Pengerjaan',
     desc: 'Kami memberikan garansi pemeliharaan untuk memastikan fungsi engsel, rel laci, sambungan edging, dan finishing tetap prima setelah serah terima proyek.',
   },
   {
-    icon: '🚗',
+    icon: 'directions_car',
     title: 'Gratis Survey Lokasi di Batam',
     desc: 'Tim kami siap datang ke rumah, unit apartemen, ruko, atau kantor Anda untuk pengukuran langsung dan konsultasi teknis tanpa dikenakan biaya survey.',
   },
@@ -217,7 +217,7 @@ const steps = [
       <div class="values-grid">
         {values.map((v) => (
           <div class="value-card">
-            <span class="value-icon">{v.icon}</span>
+            <span class="value-icon"><span class="material-icons">{v.icon}</span></span>
             <h3>{v.title}</h3>
             <p>{v.desc}</p>
           </div>
@@ -277,7 +277,7 @@ const steps = [
         </p>
 
         <div class="loc-box">
-          <h3>🏢 Kantor Operasional</h3>
+           <h3><span class="material-icons">apartment</span> Kantor Operasional</h3>
           <p>
             {SITE.officeAddress.streetAddress}<br />
             {SITE.officeAddress.addressLocality}, Kepulauan Riau {SITE.officeAddress.postalCode}
@@ -285,7 +285,7 @@ const steps = [
         </div>
 
         <div class="loc-box">
-          <h3>🔨 Workshop Fabrikasi</h3>
+           <h3><span class="material-icons">build</span> Workshop Fabrikasi</h3>
           <p>
             {SITE.workshopAddress.streetAddress}<br />
             {SITE.workshopAddress.addressLocality}, Kepulauan Riau {SITE.workshopAddress.postalCode}
@@ -293,7 +293,7 @@ const steps = [
         </div>
 
         <div class="loc-box">
-          <h3>🕒 Jam Operasional</h3>
+           <h3><span class="material-icons">schedule</span> Jam Operasional</h3>
           <p>Senin – Jumat: 09.00 – 17.00 WIB<br />Sabtu: 09.00 – 15.00 WIB (Minggu/Hari Libur via Janji Temu)</p>
         </div>
       </div>
@@ -417,12 +417,14 @@ const steps = [
     padding-left: 24px;
   }
   .commit-list li::before {
-    content: "✓";
+    font-family: 'Material Icons';
+    content: "check";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
+    font-size: 1.1em;
     color: var(--c-gold);
-    font-weight: 800;
+    font-weight: normal;
   }
   .contact-snip {
     border-top: 1px solid var(--c-line);

@@ -1,13 +1,13 @@
 ---
-title: "Standar Modifikasi Plafon dan Sensor Kebakaran Formosa Residence Nagoya Batam"
-description: "Panduan teknis modifikasi plafon drop ceiling dan sensor kebakaran di Formosa Residence Nagoya Batam agar lolos inspeksi engineering dan deposit aman."
+title: "Modifikasi Plafon & Sensor Kebakaran Formosa Residence Batam"
+description: "Modifikasi Plafon & Sensor Kebakaran Formosa Residence Batam — studi kasus & panduan praktis dari pengalaman lapangan tim interior Batam."
 keywords:
   - Interior Apartemen Batam
   - Formosa Residence Nagoya
   - Modifikasi Plafon Apartemen Batam
   - Fit Out Apartemen Batam
   - Sensor Kebakaran Apartemen
-heroImage: /images/layanan/interior-apartemen-batam_poco.webp
+heroImage: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgej0nqcHm-xDSeghGULkQt8aQkG2mGZgD9TZA3GVEacvMUFP4EyawbUM0n3fiGh2e0QAZtrORLWBKvpoDbq9oIc9gZsIVqJktKC7_LF6SlTJTaemdO052EMPMh6-JdSWdrBLFdd6UkArw8HeRuZ4t8SQeUAhzoaYNS78KXArKhmfXouFR6g1dNBJZ3q5Ue/s600/Formosa%20Residence%20Nagoya_poco.webp
 pillar: apartemen
 author: Muhammad Zazuli
 pubDate: 2026-09-15
@@ -21,7 +21,9 @@ Pekerjaan langit-langit di gedung tinggi (high-rise building) memiliki aturan ma
 
 Pengalaman tim workshop interior Batam kami saat mengerjakan proyek fit out apartemen Batam merangkum panduan teknis keselamatan mekanikal, elektrikal, dan plumbing (MEP) di Formosa Residence Nagoya. Tujuannya jelas: desain interior tetap mewah, fungsi sensor kebakaran bekerja sempurna, dan uang jaminan deposit renovasi Anda kembali seratus persen tanpa potongan denda.
 
-## Anatomi Sistem Proteksi Kebakaran Bawaan di Formosa Residence Nagoya
+![Plafon Sensor Kebakaran Formosa Residence Batam](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj89GxxCNB6Mx-ERzaRUVMBN7r0AEzsHjqDwypwcSC4xjuOXJ506G-4vYSUIIsFIFK46CqWRyhxFCB5zP6BWEiFT6YGxbz8Yq2n740njGyKCA2VY58tfvsTKWZ-la9ydRoOvzxpSKr5t3NJOljGpHujhi_HrY0cbB8Y7YqiNIsf4-E4rbSWYbjbqUcX7Yf7/s600/Plafon%20Sensor%20Kebakaran%20Formosa%20Residence%20Batam_poco.webp)
+
+## Modifikasi Plafon & Sensor Kebakaran Formosa Residence Batam
 
 Sebelum tukang menyentuh bor atau memasang rangka hollow galvalum, pahami tiga komponen pengaman kebakaran yang sudah terpasang di langit-langit unit Anda:
 

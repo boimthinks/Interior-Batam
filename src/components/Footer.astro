@@ -23,12 +23,12 @@ const socialLinks = Object.entries(SITE.socials).map(([k, v]) => ({
 
     <div>
       <h4>Kontak &amp; Alamat</h4>
-      <ul class="footer-list">
-        <li>💬 <a href={waLink()} target="_blank" rel="noopener">{SITE.phone} (WhatsApp)</a></li>
-        <li>✉️ <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-        <li>🏢 <strong>Kantor:</strong> Ruko Mega Legenda 2 Blok B2 No.7, Baloi Permai</li>
-        <li>🔨 <strong>Workshop:</strong> Ruko Valley Park Blk. A No.01, Batam Center</li>
-      </ul>
+  <ul class="footer-list">
+    <li><span class="material-icons">chat</span> <a href={waLink()} target="_blank" rel="noopener">{SITE.phone}</a></li>
+    <li><span class="material-icons">mail</span> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+    <li><span class="material-icons">apartment</span> <strong>Kantor:</strong> Ruko Mega Legenda 2 Blok B2 No.7, Baloi Permai</li>
+    <li><span class="material-icons">build</span> <strong>Workshop:</strong> Ruko Valley Park Blk. A No.01, Batam Center</li>
+  </ul>
     </div>
 
     <div>

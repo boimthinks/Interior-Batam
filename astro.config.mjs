@@ -29,4 +29,8 @@ export default defineConfig({
     }),
   ],
   scopedStyleStrategy: 'class',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
 });

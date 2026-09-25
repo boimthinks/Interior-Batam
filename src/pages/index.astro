@@ -3,11 +3,16 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Schema from '../components/Schema.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 import WhatsAppCTA from '../components/WhatsAppCTA.astro';
 import { SITE, waLink } from '../config/site';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 const servicesBase = new URL('/layanan/', SITE.domain).href;
+
+const latestArticles = (await getCollection('articles'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 
 // Function to extract short title from full title
 function getShortTitle(fullTitle: string): string {
@@ -36,6 +41,7 @@ function getShortTitle(fullTitle: string): string {
   title={undefined}
   description={SITE.description}
   keywords={['Interior Batam', 'Jasa Desain Interior Batam', 'Kontraktor Interior Batam', 'Kitchen Set Batam', 'Interior Apartemen Batam']}
+  image="/images/hero-img-interior-batam_poco.webp"
   type="website"
 >
   {/* Homepage entity schemas */}
@@ -55,7 +61,7 @@ function getShortTitle(fullTitle: string): string {
     publisher: { '@id': `${SITE.domain}/#organization` },
     potentialAction: {
       '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${SITE.domain}/artikel/?q={search_term_string}` },
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE.domain}/blog/?q={search_term_string}` },
       'query-input': 'required name=search_term_string',
     },
   })}></script>
@@ -77,10 +83,10 @@ function getShortTitle(fullTitle: string): string {
         </div>
       </div>
       <ul class="usp reveal-stagger">
-        <li><span class="usp-check">✓</span> Gratis Survey Lokasi Batam</li>
-        <li><span class="usp-check">✓</span> Visual 3D Rendering Realistis</li>
-        <li><span class="usp-check">✓</span> Workshop Milik Sendiri</li>
-        <li><span class="usp-check">✓</span> Garansi Pemeliharaan</li>
+        <li><span class="material-icons usp-check">check</span> Gratis Survey Lokasi Batam</li>
+        <li><span class="material-icons usp-check">check</span> Visual 3D Rendering Realistis</li>
+        <li><span class="material-icons usp-check">check</span> Workshop Milik Sendiri</li>
+        <li><span class="material-icons usp-check">check</span> Garansi Pemeliharaan</li>
       </ul>
     </div>
   </section>
@@ -125,7 +131,29 @@ function getShortTitle(fullTitle: string): string {
     </ol>
   </section>
 
-  {/* 5. AREA LAYANAN + TESTIMONI */}
+  {/* 5. ARTIKEL & INSPIRASI TERBARU */}
+  <section class="container sections reveal">
+    <div class="section-header-flex">
+      <div>
+        <p class="eyebrow">Blog &amp; Inspirasi</p>
+        <h2>Artikel &amp; Panduan Interior Batam Terbaru</h2>
+      </div>
+      <a class="ghost-cta view-all-btn" href="/blog/">Lihat Semua Artikel</a>
+    </div>
+    <div class="card-grid">
+      {latestArticles.map((a) => (
+        <ArticleCard
+          href={`/blog/${a.id}/`}
+          title={a.data.title}
+          description={a.data.description}
+          image={a.data.heroImage}
+          date={a.data.pubDate}
+        />
+      ))}
+    </div>
+  </section>
+
+  {/* 6. AREA LAYANAN + TESTIMONI */}
   <section class="container sections reveal">
     <p class="eyebrow">Area &amp; Testimoni</p>
     <h2>Area Layanan &amp; Kata Klien Kami di Batam</h2>
@@ -134,9 +162,28 @@ function getShortTitle(fullTitle: string): string {
     <WhatsAppCTA />
   </section>
 
-  {/* 6. FINAL CTA */}
+  {/* 7. FINAL CTA */}
   <section class="container final-cta reveal">
     <h2>Konsultasikan Kebutuhan Ruangan Anda Sekarang – Gratis Survey Seluruh Batam!</h2>
     <WhatsAppCTA full />
   </section>
 </BaseLayout>
+
+<style>
+  .section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .section-header-flex h2 {
+    margin-bottom: 0;
+  }
+  .view-all-btn {
+    white-space: nowrap;
+    padding: 10px 22px;
+    font-size: 0.92rem;
+  }
+</style>

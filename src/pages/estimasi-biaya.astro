@@ -63,7 +63,7 @@ const RATES = {
   </section>
 </BaseLayout>
 
-<script is:inline define:vars={{ RATES }}>
+<script is:inline data-astro-rerun define:vars={{ RATES }}>
   const fmt = (n) => 'Rp ' + Math.round(n).toLocaleString('id-ID');
   function hitung() {
     const v = (id) => parseFloat(document.getElementById(id).value) || 0;

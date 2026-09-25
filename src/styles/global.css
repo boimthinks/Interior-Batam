@@ -27,6 +27,25 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -149,7 +168,7 @@ a:hover { color: var(--c-primary-d); }
   width: 100%;
 }
 .hero-home {
-  background-image: url('/images/hero-img-kontraktor-interior-batam_poco.webp');
+  background-image: url('/images/hero-img-interior-batam_poco.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -399,12 +418,6 @@ a:hover { color: var(--c-primary-d); }
   opacity: 0.9 !important;
 }
 
-.card-link {
-  color: var(--c-primary); font-weight: 600; position: relative;
-}
-.card-link::after { content: " →"; transition: margin-left 0.3s var(--ease); }
-.service-card:hover .card-link, .article-card:hover .card-link { color: var(--c-gold); }
-.service-card:hover .card-link::after, .article-card:hover .card-link::after { margin-left: 5px; }
 .article-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; color: var(--c-muted); font-size: 0.85rem; }
 
 /* ===================== FAQ ===================== */
@@ -579,9 +592,41 @@ a:hover { color: var(--c-primary-d); }
   margin: 0 0 18px;
 }
 .article-body ul, .article-body ol {
-  margin: 14px 0 22px 24px;
+  margin: 18px 0 24px;
+  padding-left: 0;
 }
-.article-body li {
+.article-body ul {
+  padding-left: 24px;
+}
+.article-body ol {
+  list-style: none;
+  counter-reset: custom-ol;
+}
+.article-body ol > li {
+  counter-increment: custom-ol;
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.article-body ol > li::before {
+  content: counter(custom-ol);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  background: var(--c-primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.article-body ul > li {
   margin-bottom: 8px;
 }
 .article-body img {

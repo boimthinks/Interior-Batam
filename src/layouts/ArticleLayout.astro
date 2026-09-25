@@ -66,7 +66,7 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
   <div class="container article-container">
     <Breadcrumbs
       items={[
-        { name: 'Artikel', url: new URL('/artikel/', SITE.domain).href },
+        { name: 'Blog', url: new URL('/blog/', SITE.domain).href },
         { name: category.name, url: new URL(category.serviceHref, SITE.domain).href },
         { name: title, url },
       ]}
@@ -76,12 +76,12 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
       {/* KOLOM KIRI: KONTEN UTAMA ARTIKEL */}
       <article class="article-main-content">
         {draft && (
-          <p class="draft-badge">⚠️ Draft — belum terindex mesin pencari. Isi konten &amp; set draft:false.</p>
+          <p class="draft-badge"><span class="material-icons">warning</span> Draft — belum terindex mesin pencari. Isi konten &amp; set draft:false.</p>
         )}
 
         <div class="article-header">
           <a class="article-category-badge" href={category.serviceHref}>
-            📁 {category.name}
+<span class="material-icons">folder_open</span> {category.name}
           </a>
           <h1>{title}</h1>
           <p class="article-byline">
@@ -96,7 +96,7 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
         </div>
 
         <div class="reveal article-featured-img">
-          <PlaceholderImage label={title} src={heroImage} ratio="16 / 9" />
+          <PlaceholderImage label={title} src={heroImage} ratio="4 / 3" />
         </div>
 
         <div class="article-body">
@@ -115,10 +115,10 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
             </p>
             <div class="article-offer-actions">
               <a class="wa-cta" href={waLink(waMessage)} target="_blank" rel="noopener">
-                💬 Jadwalkan Survey Gratis via WhatsApp
+                <span class="material-icons">chat</span> Jadwalkan Survey Gratis via WhatsApp
               </a>
               <a class="ghost-cta" href={category.serviceHref}>
-                Lihat Penawaran {category.name} →
+                Lihat Penawaran {category.name} <span class="material-icons">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -136,24 +136,24 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
           </p>
 
           <a class="wa-cta sidebar-wa-btn" href={waLink(waMessage)} target="_blank" rel="noopener">
-            💬 Chat WhatsApp Sekarang
+<span class="material-icons">chat</span> Chat WhatsApp Sekarang
           </a>
 
           <ul class="sidebar-trust-list">
-            <li><span class="usp-check">✓</span> Gratis Survey Seluruh Batam</li>
-            <li><span class="usp-check">✓</span> Desain 3D Realistis</li>
-            <li><span class="usp-check">✓</span> Workshop Sendiri (Batam Center)</li>
-            <li><span class="usp-check">✓</span> Garansi Pemeliharaan Resmi</li>
+            <li><span class="material-icons usp-check">check</span> Gratis Survey Seluruh Batam</li>
+            <li><span class="material-icons usp-check">check</span> Desain 3D Realistis</li>
+            <li><span class="material-icons usp-check">check</span> Workshop Sendiri (Batam Center)</li>
+            <li><span class="material-icons usp-check">check</span> Garansi Pemeliharaan Resmi</li>
           </ul>
 
           <div class="sidebar-contact-box">
-            <p>🏢 <strong>Kantor:</strong> Ruko Mega Legenda 2, Baloi Permai</p>
-            <p>🔨 <strong>Workshop:</strong> Ruko Valley Park, Batam Center</p>
-            <p>📞 <strong>WhatsApp:</strong> +62 813-7370-3639</p>
+            <p><span class="material-icons">apartment</span> <strong>Kantor:</strong> Ruko Mega Legenda 2, Baloi Permai</p>
+            <p><span class="material-icons">build</span> <strong>Workshop:</strong> Ruko Valley Park, Batam Center</p>
+            <p><span class="material-icons">phone</span> <strong>WhatsApp:</strong> +62 813-7370-3639</p>
           </div>
 
           <a class="sidebar-more-link" href={category.serviceHref}>
-            Lihat Layanan {category.name} Selengkapnya →
+            Lihat Layanan {category.name} Selengkapnya <span class="material-icons">arrow_forward</span>
           </a>
         </div>
 
@@ -191,7 +191,7 @@ const waMessage = `Halo, saya baru saja membaca artikel "${title}" di website In
                   href={cat.serviceHref}
                 >
                   <span class="sidebar-service-name">{cat.name}</span>
-                  <span class="sidebar-service-arrow">→</span>
+                  <span class="material-icons sidebar-service-arrow">arrow_forward</span>
                 </a>
               </li>
             ))}
