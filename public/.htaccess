@@ -38,7 +38,17 @@
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
   ExpiresByType application/json "access plus 1 day"
-  ExpiresByType text/html "access plus 6 hours"
+  # HTML tidak di-cache agar artikel baru langsung tampil setelah upload
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# 2b. Khusus file HTML: cegah caching di browser dan proxy shared hosting
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
 </IfModule>
 
 # 3. Gzip compression (jika belum aktif di server)

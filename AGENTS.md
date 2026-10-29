@@ -13,13 +13,18 @@
   - Aturan penulisan artikel
 - Selalu refer ke file ini sebelum menulis konten atau membuat perubahan
 
-## 3. Skill Penulisan Artikel
-- **WAJIB** gunakan skill `penulis-ahli` untuk semua penulisan/editing artikel blog
-- Skill ini otomatis membaca `SUMBER-PENGETAHUAN.md` untuk:
-  - Data brand dan kontak
-  - Struktur frontmatter yang benar
-  - Aturan SEO/GEO lokal Batam
-  - Humanizer untuk menghilangkan pola tulisan AI
+## 3. Alur Kerja Penulisan Artikel (Dua Tahap Wajib)
+Setiap penulisan artikel baru wajib melalui alur kerja berurutan (chaining dua skill):
+
+1. **Tahap 1 — Riset Semantik & Arsitektur (Skill `pakar-entity-seo`)**:
+   - Lakukan ekstraksi kata kunci komersial/transaksional lokal Batam.
+   - Petakan entitas semantik (Schema.org), knowledge graph, dan rancang outline yang kaya data teknis/masalah lapangan.
+   - Pastikan sudut pandang riset mengarah ke penawaran jasa kontraktor/custom furniture (bukan panduan DIY).
+
+2. **Tahap 2 — Penulisan Artikel Final (Skill `penulis-ahli`)**:
+   - Gunakan hasil dari Tahap 1 sebagai input.
+   - Eksekusi penulisan dengan gaya bahasa marketing persuasif, solutif, dan manusiawi (humanizer).
+   - Terapkan kaidah SEO/GEO 2026, validasi frontmatter Astro, serta pastikan bebas pola klise AI.
 
 ## 4. Tech Stack Project
 **Framework:** Astro
@@ -41,10 +46,22 @@
   6. `kamar-tidur` — Interior Kamar Tidur
 - Artikel baru **tidak boleh** keluar dari 6 kategori pilar layanan di atas.
 - Judul layanan maupun artikel sebisa mungkin tidak menggunakan titik dua (`:`).
+- **DILARANG menggunakan angka di dalam judul artikel** (buat judul mengalir secara alami dan deskriptif tanpa angka).
+
+## 7. Sudut Pandang Penulisan (Marketing & Komersial)
+- **WAJIB**: Gunakan **sudut pandang marketing, penawaran jasa, dan persuasif komersial**.
+- **DILARANG**: Menulis artikel dengan sudut pandang "Panduan", "Tutorial", "Cara Memasang Sendiri / DIY", atau kata "Panduan" pada judul/slug.
+- **Fokus Konten**:
+  - Tulis dari sudut pandang kontraktor/vendor interior yang menawarkan solusi tuntas.
+  - Angkat masalah nyata pemilik rumah/kantor di Batam (lembab pesisir, rayap, mebel toko cepat rusak, dinding hebel, birokrasi izin klaster/apartemen).
+  - Tampilkan keunggulan jasa Interior Batam (workshop sendiri di Valley Park Batam Center, bahan multipleks maritim & PVC board anti rayap, visualisasi 3D gratis, bebas debu di rumah, garansi, transparansi RAB).
+  - Tujuan akhir artikel: meyakinkan pembaca agar langsung menghubungi WhatsApp untuk konsultasi dan survey gratis.
 
 ---
 
 **Pengingat Penting:** 
-1. Selalu gunakan skill `penulis-ahli` saat menulis artikel blog
-2. Selalu verifikasi data di `SUMBER-PENGETAHUAN.md` sebelum membuat konten
-3. Selalu sertakan kontak WhatsApp (+62 813-7370-3639) di artikel
+1. Jalankan **Tahap 1 (`pakar-entity-seo`)** untuk riset keyword, entitas, dan outline komersial sebelum menulis.
+2. Lanjutkan ke **Tahap 2 (`penulis-ahli`)** untuk eksekusi artikel marketing persuasif.
+3. Selalu verifikasi data di `SUMBER-PENGETAHUAN.md` sebelum membuat konten.
+4. Selalu gunakan sudut pandang marketing/penawaran jasa (BUKAN panduan/DIY).
+5. Selalu sertakan kontak WhatsApp (+62 813-7370-3639) di artikel.

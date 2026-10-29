@@ -6,3 +6,9 @@ Disallow: /api/
 
 # Sitemap (dihasilkan oleh @astrojs/sitemap)
 Sitemap: https://interiorbatam.web.id/sitemap-index.xml
+
+# LLM / AI Search Engine Optimization (GEO)
+# Panduan terstruktur untuk crawler Generative AI (SearchGPT, Perplexity, Gemini, Claude, Copilot)
+# https://llmstxt.org
+# llms-txt: https://interiorbatam.web.id/llms.txt
+# llms-full-txt: https://interiorbatam.web.id/llms-full.txt

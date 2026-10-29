@@ -7,12 +7,42 @@ import Schema from '../components/Schema.astro';
 import { SITE } from '../config/site';
 
 const projects = [
-  { title: 'Kitchen Set Apartemen Pollux Habibie', loc: 'Nagoya', time: '3 minggu' },
-  { title: 'Ruang Tamu Rumah Tipe 36', loc: 'Batu Aji', time: '2 minggu' },
-  { title: 'Renovasi Ruko 3 Lantai', loc: 'Batam Center', time: '6 minggu' },
-  { title: 'Backdrop TV & Partisi', loc: 'Bengkong', time: '10 hari' },
-  { title: 'Dapur Rumah Subsidi', loc: 'Tiban', time: '2 minggu' },
-  { title: 'Interior Kafe', loc: 'Harbour Bay', time: '4 minggu' },
+  {
+    title: 'Kitchen Set Apartemen Pollux Habibie',
+    loc: 'Nagoya',
+    time: '3 minggu',
+    image: '/images/portofolio/Kitchen Set Apartemen Pollux Habibie_poco.webp',
+  },
+  {
+    title: 'Ruang Tamu Rumah Tipe 36',
+    loc: 'Batu Aji',
+    time: '2 minggu',
+    image: '/images/portofolio/Ruang Tamu Rumah Tipe 36_poco.webp',
+  },
+  {
+    title: 'Renovasi Ruko 3 Lantai',
+    loc: 'Batam Center',
+    time: '6 minggu',
+    image: '/images/portofolio/Renovasi Ruko 3 Lantai_poco.webp',
+  },
+  {
+    title: 'Backdrop TV & Partisi',
+    loc: 'Bengkong',
+    time: '10 hari',
+    image: '/images/portofolio/Backdrop TV dan Partisi_poco.webp',
+  },
+  {
+    title: 'Dapur Rumah Subsidi',
+    loc: 'Tiban',
+    time: '2 minggu',
+    image: '/images/portofolio/Dapur Rumah Subsidi_poco.webp',
+  },
+  {
+    title: 'Interior Kafe',
+    loc: 'Harbour Bay',
+    time: '4 minggu',
+    image: '/images/portofolio/Interior Kafe_poco.webp',
+  },
 ];
 
 // ItemList + CreativeWork schema untuk portofolio
@@ -22,7 +52,12 @@ const itemList = {
   itemListElement: projects.map((p, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    item: { '@type': 'CreativeWork', name: p.title, contentLocation: p.loc },
+    item: {
+      '@type': 'CreativeWork',
+      name: p.title,
+      contentLocation: p.loc,
+      image: new URL(p.image, SITE.domain).href,
+    },
   })),
 };
 ---
@@ -47,7 +82,7 @@ const itemList = {
     <div class="card-grid">
       {projects.map((p) => (
         <article class="service-card">
-          <PlaceholderImage label={`${p.title} — ${p.loc}`} ratio="4 / 3" />
+          <PlaceholderImage src={p.image} label={`${p.title} — ${p.loc}`} ratio="4 / 3" />
           <div class="service-card-body">
             <h3>{p.title}</h3>
             <p>{p.loc} · Estimasi pengerjaan {p.time}</p>

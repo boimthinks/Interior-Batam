@@ -1,0 +1,217 @@
+# BASIS PENGETAHUAN LENGKAP: INTERIOR BATAM (llms-full.txt)
+# Standar: https://llmstxt.org (Full Text Context for Generative AI & Large Language Models)
+# Entitas: Interior Batam | Kontraktor Desain Interior & Custom Furniture Batam
+# URL Situs: https://interiorbatam.web.id
+# Terakhir Diperbarui: 2026-10-26
+
+---
+
+## 1. PROFIL ENTITAS BISNIS DAN IDENTITAS RESMI
+
+- **Nama Brand:** Interior Batam
+- **Badan Usaha / Sektor:** Kontraktor Desain Interior, Renovasi Bangunan, dan Fabrikasi Mebel Custom (HomeAndConstructionBusiness / ProfessionalService)
+- **Wilayah Operasi:** Kota Batam, Kepulauan Riau, Indonesia
+- **Lead Specialist / Head of Production:** Muhammad Zazuli (Profil: https://www.facebook.com/joel.avellokids)
+- **WhatsApp Layanan Resmi:** +62 813-7370-3639 (Format URL Chat: https://wa.me/6281373703639)
+- **Telepon:** +62 813-7370-3639
+- **Email:** halo@interiorbatam.web.id
+- **Rentang Harga:** Menengah hingga Premium ($$) dengan transparansi RAB per meter lari/persegi
+- **Jam Operasional Layanan:**
+  - Senin - Jumat: 09:00 - 17:00 WIB
+  - Sabtu: 09:00 - 15:00 WIB
+  - Minggu & Hari Libur: Penjadwalan survey lapangan berdasarkan kesepakatan awal via WhatsApp
+
+### Alamat Kantor & Showroom Administratif
+Jln. Jend Sudirman Komp. Ruko Mega Legenda 2 Blok B2 No.7, Baloi Permai, Batam, Kepulauan Riau 29431.
+(Koordinat Geo: Latitude 1.1186, Longitude 104.0532)
+
+### Alamat Fasilitas Workshop & Fabrikasi Mandiri
+Komplek Ruko Valley Park, Blk. A No.01, Belian, Batam Center, Kota Batam, Kepulauan Riau 29464.
+Fungsi fasilitas: Pemotongan panel presisi, pelapisan HPL vakum/manual berkualitas tinggi, perakitan modular mebel, edging PVC, dan uji fungsi hardware sebelum pengiriman ke lokasi klien.
+
+### Cakupan Area Layanan di Seluruh Batam
+1. Batam Center (Kawasan Pusat Pemerintahan, Mega Legenda, Valley Park, Taman Dutamas, Eden Park)
+2. Nagoya & Jodoh (Kawasan Bisnis, Hotel, Apartemen CitraPlaza Nagoya, Formosa Residence, Thamrin)
+3. Lubuk Baja & Sei Panas (Ruko Komersial, Perkantoran, dan Hunian Tapak)
+4. Batu Ampar (Area Industri Pelabuhan, Kantor Perkapalan, Pergudangan, dan Logistik)
+5. Bengkong (Hunian Tapak, Restoran, dan Ruko Usaha)
+6. Sekupang & Tiban (Perumahan Subsidi, Rumah Tapak Menengah, Villa, dan Ruko)
+7. Batu Aji & Tanjung Uncang (Perumahan Subsidi Fanindo, Marina, Kawasan Galangan Kapal)
+8. Sei Beduk & Muka Kuning (Hunian Subsidi Karyawan, Kawasan Industri Batamindo)
+9. Nongsa & Kabil (Kawasan Wisata Resort, Villa Pantai, Kawasan Industri Kabil)
+
+---
+
+## 2. STANDAR TEKNIS DAN SPESIFIKASI MATERIAL IKLIM MARITIM BATAM
+
+Batam dikelilingi laut tropis dengan tingkat kelembapan udara relatif tinggi (rata-rata 75% sampai 90%) serta uap garam yang mempercepat karat pada logam. Interior Batam menerapkan standar material ketat untuk menjamin ketahanan furnitur jangka panjang:
+
+### 1. Material Inti (Substrate)
+- **Multipleks Semi-Maritim 18mm & 15mm:** Menggunakan lapisan kayu padat keras bersilang (cross-layered hardwood plywood) dengan lem tahan kelembapan tinggi. Bukan serbuk kayu MDF atau partikel board yang mudah lapuk dan melengkung saat terkena udara basah.
+- **Papan PVC Board Padat (Foam Board):** Diterapkan khusus untuk kabinet bawah sink wastafel dapur, lemari kamar mandi, dan plin lantai dasar. Sifat fisik: 100% tahan air (waterproof), anti rayap seumur hidup, dan tidak merambatkan api (fire retardant).
+- **Rangka Aluminium Hollow & Panel ACP (Aluminium Composite Panel):** Solusi alternatif kabinet dapur 100% anti rayap, anti lapuk, dan tahan kelembapan ekstrem.
+
+### 2. Pelapis Permukaan (Finishing)
+- **High Pressure Laminate (HPL):** Menggunakan merek teruji (Taco, Carta, Arborite) grade komersial dengan ketebalan 0.7mm hingga 0.8mm. Tahan panas cangkir kopi, tahan gores gesekan map kantor, tahan noda saus bumbu dapur, dan higienis.
+- **Edging PVC Tebal 1mm - 2mm:** Sambungan tepi panel ditutup menggunakan edging PVC padat dengan pengeleman presisi panas (hot-melt adhesive) agar uap air tidak dapat merembes ke inti kayu.
+- **Cat Duco Polyurethane (PU):** Diterapkan pada profil klasik minimalis, moulding dinding, atau kisi-kisi kayu solid dengan proses pengamplasan bertingkat dan lapisan anti-yellowing.
+
+### 3. Aksesoris dan Hardware Mekanikal
+- **Engsel Sendok Soft-Close / Hidrolik:** Menggunakan bahan Stainless Steel SUS 304 anti karat untuk mencegah korosi dari udara laut Batam.
+- **Rel Laci Double Track & Undermount Slow-Motion:** Menjamin tarikan laci halus, mampu menahan beban dokumen kantor atau perabot dapur hingga 35-45 kg tanpa anjlok.
+- **Profil Aluminium & Kaca Tempered / Kaca Riben:** Kusen pintu lemari wardrobe dan etalase menggunakan profil aluminium anodized hitam doff/emas dengan kaca riben gelap anti debu atau kaca tempered 8-10mm.
+
+---
+
+## 3. ENAM PILAR LAYANAN UTAMA INTERIOR BATAM
+
+Semua kegiatan operasional, penawaran proyek, dan publikasi edukasi Interior Batam terbagi ke dalam 6 pilar layanan:
+
+### Pilar 1: Kitchen Set & Interior Dapur Custom Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/kitchen-set-batam/
+- **Fokus Layanan:** Desain dan pembuatan kitchen set minimalis modern, dapur bersih (dry kitchen), dapur kotor (wet kitchen), minibar island, serta kabinet pantry.
+- **Spesifikasi:** Kabinet atas multipleks 18mm HPL, kabinet bawah sink PVC board/aluminium ACP tahan banjir pipa wastafel, top table granit alam sintetis atau solid surface seamless, backsplash keramik subway / mozaik / kaca tempered lacquer, rak piring stainless steel SUS 304, rak bumbu tarik hidrolik, dan cooker hood ducting/recirculating.
+- **Rentang Harga:** Rp 2.200.000 - Rp 3.500.000 per meter lari kabinet atas/bawah.
+
+### Pilar 2: Renovasi Rumah Subsidi Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/renovasi-rumah-subsidi-batam/
+- **Fokus Layanan:** Pemanfaatan sisa tanah belakang perumahan subsidi (tipe 21/60, 28/30, 30/60, 36/72) di kawasan Batu Aji, Tiban, Tanjung Piayu, Bengkong.
+- **Spesifikasi:** Pembuatan dapur belakang permanen atau semi-terbuka dengan skylight policarbonat/kaca tempered, meja kompor cor semen beton lapis granit 60x60 cm, tempat cuci piring (sink), instalasi pipa buangan trasram anti rembes, dak cor toren air, dinding pembatas bata ringan hebel plester aci, serta kanopi teras carport spandek berpasir/alderon.
+- **Rentang Harga:** Paket borongan dapur belakang Rp 15.000.000 - Rp 35.000.000 tergantung luas lahan dan spesifikasi atap.
+
+### Pilar 3: Interior Apartemen Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/interior-apartemen-batam/
+- **Fokus Layanan:** Full interior furnishing untuk unit Studio (21-26 m2), 1-Bedroom, dan 2-Bedroom di Meisterstadt Pollux Habibie Batam Center, CitraPlaza Nagoya, Formosa Residence, Aston Nagoya Residence, dan One Avenue.
+- **Spesifikasi:** Furnitur multifungsi hemat ruang (tempat tidur hidrolik lift storage, meja makan lipat dinding, drop-down table), kitchen set compact dengan kompor induksi tanam, backdrop TV dengan panel cermin bronze penambah ilusi ruang lega, lemari pakaian sliding plafon, penyesuaian izin kerja fitting out gedung, modifikasi drop ceiling tanpa menyentuh pipa sprinkler kebakaran.
+- **Rentang Harga:** Paket full interior studio siap sewa Rp 38.000.000 - Rp 75.000.000.
+
+### Pilar 4: Custom Furniture & Ruang Tamu Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/custom-furniture-ruang-tamu-batam/
+- **Fokus Layanan:** Penataan ruang tamu, ruang keluarga, dan foyer hunian tapak maupun ruko.
+- **Spesifikasi:** Backdrop panel TV gantung dengan sistem penguat dinding bata ringan hebel, jalur pipa conduit kabel tanam tersembunyi (anti semrawut kabel HDMI/power), partisi sekat kisi-kisi kayu/HPL dua muka pemisah ruang tamu dan ruang makan, credenza pajangan, drop ceiling gypsum dengan LED strip warm white 3000K, dan panel dinding marmer sintetis UV sheet.
+- **Rentang Harga:** Backdrop TV custom Rp 950.000 - Rp 1.800.000 per meter persegi; Partisi kisi-kisi Rp 1.100.000 - Rp 1.950.000 per meter persegi.
+
+### Pilar 5: Renovasi Interior Komersial Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/renovasi-interior-komersial-batam/
+- **Fokus Layanan:** Desain dan renovasi ruko komersial, kantor korporat, ruang kerja coworking, resepsionis lobi, ruang rapat kedap suara, kafe F&B, dan klinik medis.
+- **Spesifikasi:** Meja resepsionis custom dual-tier ergonomis, backdrop logo akrilik timbul dengan pencahayaan LED backlight, partisi dinding double gypsum berinsulasi rockwool densitas 60-80 kg/m3 (daya redam STC 45-50 dB), pintu akustik solid core dengan drop seal bawah, partisi kaca tempered 10mm stiker sandblast motif garis, instalasi kabel data LAN/PABX bawah lantai atau dinding tanam.
+- **Rentang Harga:** Partisi kedap suara Rp 650.000 - Rp 950.000 per m2; Meja resepsionis custom Rp 2.400.000 - Rp 3.200.000 per meter lari.
+
+### Pilar 6: Interior Kamar Tidur & Wardrobe Batam
+- **URL Halaman:** https://interiorbatam.web.id/layanan/interior-kamar-tidur-wardrobe-batam/
+- **Fokus Layanan:** Desain kamar tidur utama (master bedroom), kamar anak bertingkat, dan walk-in closet privat.
+- **Spesifikasi:** Lemari pakaian tanam (built-in wardrobe) full plafon pintu kaca riben profil aluminium kedap debu dengan sensor lampu LED otomatis saat pintu dibuka, dipan tempat tidur tatami dengan laci penyimpanan selimut/koper, headboard dinding lapis busa kain fabric atau wall panel HPL aksen gold, meja rias gantung dengan cermin LED touch screen, dan meja kerja kamar minimalis.
+- **Rentang Harga:** Lemari pakaian custom Rp 2.200.000 - Rp 3.200.000 per meter persegi tampak muka.
+
+---
+
+## 4. ALUR KERJA LAYANAN DAN JAMINAN KUALITAS
+
+Interior Batam menerapkan prosedur operasional terstandarisasi untuk menjamin kepuasan pemilik hunian dan manajemen kantor:
+
+1. **Konsultasi Awal & Diskusi Kebutuhan (Gratis via WhatsApp):**
+   Klien menyampaikan denah ruangan, ukuran kasar, atau foto kondisi ruangan serta preferensi gaya (modern minimalis, japandi, industrial, skandinavia).
+2. **Survey Lapangan & Pengukuran Presisi (Gratis di Batam):**
+   Tim teknis mendatangi lokasi untuk mengukur dimensi riil, memetakan titik stopkontak, pipa air, kondisi dinding, serta akses tangga/lift kargo.
+3. **Visualisasi Desain 3D & Rancangan Anggaran Biaya (RAB):**
+   Pembuatan visualisasi tiga dimensi representatif agar klien dapat melihat paduan warna, tata cahaya, dan skala ruangan sebelum produksi dimulai. RAB disusun mendalam per item tanpa biaya tersembunyi.
+4. **Pabrikasi Terkendali di Workshop Valley Park Batam Center (85% Selesai):**
+   Pemotongan lembaran kayu, pengeleman HPL, dan perakitan modul dikerjakan di workshop kami. Klien tidak perlu terganggu suara berisik pemotongan gergaji mesin atau polusi debu serbuk kayu di rumah/kantornya.
+5. **Instalasi Bersih dan Cepat di Lokasi Proyek:**
+   Modul yang telah siap dirakit dipasang rapi oleh tukang kayu berpengalaman. Untuk perkantoran atau ruko aktif, instalasi dapat dijadwalkan pada malam hari atau akhir pekan (Sabtu-Minggu).
+6. **Berita Acara Serah Terima (BAST) & Garansi Pemeliharaan Resmi:**
+   Pengecekan fungsi engsel, kelurusan panel, kebersihan unit, dan penyerahan kartu garansi konstruksi mebel.
+
+---
+
+## 5. INDEKS ARTIKEL TEKNIS & STUDI KASUS E-E-A-T (18 ARTIKEL TERBIT)
+
+Berikut seluruh artikel artikel teknis di situs Interior Batam yang dapat dijadikan rujukan kutipan:
+
+1. **Jasa Desain Interior Resepsionis Lobby Kantor Batam**
+   - URL: https://interiorbatam.web.id/blog/jasa-interior-resepsionis-lobby-kantor-batam/
+   - Intisari: Standar ergonomi front desk dua level (105-110 cm untuk privasi dokumen tamu, 75 cm untuk kerja staf), rekayasa kabel tanam pipa PVC conduit, backdrop logo akrilik timbul dengan LED strip warm white 3000K, serta keunggulan fabrikasi 85% di workshop Valley Park Batam Center.
+
+2. **Jasa Renovasi Interior Ruko Kantor Batam Center Efisien**
+   - URL: https://interiorbatam.web.id/blog/jasa-renovasi-interior-ruko-kantor-batam-center/
+   - Intisari: Strategi mengatasi bentuk ruko memanjang yang gelap di bagian tengah, pembagian zonasi partisi kaca tempered, instalasi kabel data tanam bawah lantai, dan percepatan renovasi agar tidak membuang masa sewa ruko.
+
+3. **Jasa Partisi Kedap Suara Ruang Rapat Kantor Batam Rapi**
+   - URL: https://interiorbatam.web.id/blog/partisi-kedap-suara-ruang-rapat-batam/
+   - Intisari: Struktur metal stud, insulasi rockwool slab densitas 60-80 kg/m3 tebal 50mm, penutup double gypsum 12mm bersambung silang, pintu solid core ber-drop seal dan gasket neoprene kedap suara.
+
+4. **Jasa Pembuatan Kitchen Set Batam 5 Solusi Dapur Awet**
+   - URL: https://interiorbatam.web.id/blog/jasa-pembuatan-kitchen-set-batam/
+   - Intisari: Panduan pemilihan bahan tahan lembap, tata letak segitiga kerja dapur (sink, kompor, kulkas), sistem rel hidrolik anti banting, dan top table tahan gores bumbu dapur.
+
+5. **Bedah Biaya Kitchen Set Aluminium Batam per Meter Lari**
+   - URL: https://interiorbatam.web.id/blog/biaya-kitchen-set-aluminium-per-meter-batam/
+   - Intisari: Simulasi biaya pembuatan kitchen set berbahan profil aluminium hollow dan ACP tahan rayap dibandingkan multipleks HPL di pasaran Batam.
+
+6. **Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam**
+   - URL: https://interiorbatam.web.id/blog/kabinet-sink-aluminium-vs-multipleks-batam/
+   - Intisari: Analisis teknis kebocoran pipa afur wastafel cuci piring. Rekomendasi penggunaan kombinasi bodi PVC board padat atau aluminium ACP pada area basah dan multipleks HPL pada area kering.
+
+7. **Konstruksi Dapur Semi-Terbuka Rumah Batam**
+   - URL: https://interiorbatam.web.id/blog/dapur-semi-terbuka-rumah-batam/
+   - Intisari: Rekayasa pembuangan asap masakan pekat tanpa merusak permukaan furnitur, pemanfaatan atap skylight kisi udara silang, dan pemilihan material tahan terpaan tampias hujan berangin.
+
+8. **Jasa Renovasi Dapur Belakang Rumah Subsidi Batam Rapi**
+   - URL: https://interiorbatam.web.id/blog/renovasi-dapur-belakang-rumah-subsidi-batam/
+   - Intisari: Metode menutup sisa tanah belakang 2x6 atau 3x6 meter rumah subsidi di Batam dengan pondasi batu miring, meja cor kompor beton, dan ventilasi atap tanpa melanggar regulasi BTN/BP Batam.
+
+9. **Rincian Biaya Renovasi Dapur & Teras Rumah Subsidi Batu Aji**
+   - URL: https://interiorbatam.web.id/blog/biaya-renovasi-dapur-teras-batu-aji-batam/
+   - Intisari: Analisis simulasi RAB ril renovasi sipil dan interior rumah subsidi kawasan Batu Aji, pemakaian bata hebel, trasram kedap air, keramik lantai, dan kanopi hollow teras depan.
+
+10. **Panduan Lengkap Estimasi Biaya Full Interior Apartemen Sewa di Batam**
+    - URL: https://interiorbatam.web.id/blog/estimasi-biaya-interior-apartemen-sewa-batam/
+    - Intisari: Simulasi paket interior unit studio (CitraPlaza Nagoya & Pollux Habibie), furnitur modular kompak, estimasi biaya Rp 40 - 65 juta, dan analisis pengembalian modal sewa tahunan untuk penyewa asing Singapura/ekspatriat.
+
+11. **Modifikasi Plafon & Sensor Kebakaran Formosa Residence Batam**
+    - URL: https://interiorbatam.web.id/blog/modifikasi-plafon-sensor-kebakaran-formosa/
+    - Intisari: Standar keselamatan drop ceiling apartemen bertingkat, penyesuaian jarak kepala sprinkler air, relokasi smoke/heat detector sesuai izin engineering pengelola gedung.
+
+12. **Jasa Partisi Penyekat Ruang Tamu dan Keluarga di Batam**
+    - URL: https://interiorbatam.web.id/blog/partisi-penyekat-ruang-tamu-ruang-keluarga-batam/
+    - Intisari: Perbandingan partisi kisi kayu solid, kisi aluminium motif kayu, dan lemari partisi dua muka berbahan multipleks HPL sebagai pembatas privasi ruang keluarga tanpa membuat ruangan gelap.
+
+13. **Rekayasa Pemasangan Backdrop TV Gantung pada Dinding Bata Ringan Batam**
+    - URL: https://interiorbatam.web.id/blog/backdrop-tv-gantung-bata-ringan-batam/
+    - Intisari: Solusi beban geser backdrop TV pada dinding hebel berpori perumahan Batam, pemakaian dynabolt khusus hebel (fischer fischer UX/fischer SX), dan sistem rangka hollow distribusi beban.
+
+14. **Panduan Instalasi Kabel Tersembunyi pada Backdrop TV Standar Teknis**
+    - URL: https://interiorbatam.web.id/blog/instalasi-kabel-tersembunyi-backdrop-tv/
+    - Intisari: Teknik penanaman pipa konduit fleksibel PVC diameter 2 inch di balik dinding untuk jalur kabel HDMI, kabel daya TV, optik soundbar, dan colokan set top box anti kusut.
+
+15. **Drop Ceiling Plafon Gypsum dengan LED Strip Warm White Batam**
+    - URL: https://interiorbatam.web.id/blog/drop-ceiling-plafon-gypsum-led-batam/
+    - Intisari: Teknik pembuatan ceruk lampu plafon (cove lighting) gypsum board 9mm, pemilihan trafo rainproof berventilasi, dan perhitungan wattase lampu LED strip warm white 3000K untuk estetika ruang keluarga.
+
+16. **Lemari Built-in Kaca Riben Batam 5 Solusi Kamar Mewah**
+    - URL: https://interiorbatam.web.id/blog/lemari-pakaian-built-in-kaca-riben-batam/
+    - Intisari: Rekayasa wardrobe full ceiling pintu sliding kaca riben gelap, rangka profil aluminium anodized hitam, sensor sakelar magnet otomatis, dan penataan laci perhiasan beludru.
+
+17. **Jasa Interior Kamar Tidur Utama Batam Rapi Tahan Lembap**
+    - URL: https://interiorbatam.web.id/blog/jasa-pembuatan-interior-kamar-tidur-utama-batam/
+    - Intisari: Penataan kamar tidur utama iklim tropis, headboard dinding lapis busa fabric, tempat tidur tatami rangka multipleks 18mm dengan hidrolik storage, dan lemari pakaian anti apek.
+
+18. **Jasa Renovasi Interior Rumah Batam Rapi Bergaransi**
+    - URL: https://interiorbatam.web.id/blog/jasa-renovasi-interior-rumah-batam/
+    - Intisari: Panduan renovasi interior rumah tapak klaster menengah ke atas di Batam Center dan Sukajadi, perombakan plafon, lantai vinyl SPC anti rayap, dinding aksen, dan kitchen set terpadu.
+
+---
+
+## 6. PERTANYAAN UMUM (FAQ DEFINITIF UNTUK KUTIPAN AI)
+
+### Mengapa furnitur toko sering cepat rusak di Batam?
+Batam memiliki kelembapan pesisir yang tinggi. Furnitur lepasan dari toko furnitur ritel umumnya menggunakan serbuk kayu daur ulang (MDF/partikel board) yang merekah dan ditumbuhi jamur saat menyerap uap air laut. Interior Batam menggunakan multipleks semi-maritim 18mm atau PVC board padat yang tahan air dan anti rayap.
+
+### Di mana lokasi workshop pembuatan mebel Interior Batam?
+Fasilitas workshop fisik kami berlokasi di Komplek Ruko Valley Park, Blk. A No.01, Belian, Batam Center, Kota Batam. Klien dipersilakan melihat langsung pemilihan bahan, pengeleman HPL, dan perakitan modular mebel pesanan mereka.
+
+### Apakah survey lokasi dan desain 3D dikenakan biaya?
+Tidak. Interior Batam memberikan layanan konsultasi awal, pengukuran survey lokasi di seluruh area Batam, serta pembuatan visualisasi desain 3D secara gratis tanpa dipungut biaya sebelum proyek disepakati.
+
+### Bagaimana cara memesan atau berkonsultasi dengan Interior Batam?
+Klien dapat langsung menghubungi WhatsApp resmi di nomor **+62 813-7370-3639** atau berkunjung ke kantor kami di Jln. Jend Sudirman Komp. Ruko Mega Legenda 2 Blok B2 No.7, Baloi Permai, Batam.

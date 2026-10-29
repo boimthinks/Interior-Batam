@@ -10,9 +10,9 @@ export const SITE = {
   domain: 'https://interiorbatam.web.id',
   // Keyword utama homepage
   primaryKeyword: 'Interior Batam',
-  tagline: 'Jasa Desain & Kontraktor Interior Profesional di Batam',
+  tagline: 'Jasa Desain & Kontraktor Interior Bergaransi',
   description:
-    'Jasa desain & kontraktor interior Batam: custom furniture, kitchen set, interior apartemen, rumah tapak, dan ruko kantor. Pengerjaan rapi, bergaransi, material tahan iklim pesisir.',
+    'Jasa kontraktor interior Batam: custom furniture, kitchen set, interior apartemen, dan ruko kantor. Pengerjaan rapi bergaransi dengan workshop mandiri.',
   author: {
     name: 'Muhammad Zazuli',
     url: 'https://www.facebook.com/joel.avellokids',
