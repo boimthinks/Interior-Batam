@@ -79,7 +79,7 @@ draft: true
 
 ## 7. Daftar Artikel Terbit
 
-Saat ini terdapat 20 artikel terbit dengan konten penuh (E-E-A-T):
+Saat ini terdapat 23 artikel terbit dengan konten penuh (E-E-A-T):
 1. `kabinet-sink-aluminium-vs-multipleks-batam` - Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam
 2. `biaya-kitchen-set-aluminium-per-meter-batam` - Bedah Biaya Kitchen Set Aluminium Batam per Meter Lari
 3. `biaya-renovasi-dapur-teras-batu-aji-batam` - Rincian Biaya Renovasi Dapur & Teras Rumah Subsidi Batu Aji
@@ -100,6 +100,9 @@ Saat ini terdapat 20 artikel terbit dengan konten penuh (E-E-A-T):
 18. `jasa-interior-resepsionis-lobby-kantor-batam` - Jasa Desain Interior Resepsionis Lobby Kantor Batam (Pilar: interior-kantor)
 19. `renovasi-sisa-tanah-belakang-rumah-subsidi-batam` - Jasa Renovasi Sisa Tanah Belakang Rumah Subsidi Batam (Pilar: rumah-subsidi)
 20. `jasa-interior-apartemen-citraplaza-nagoya` - Jasa Interior Apartemen CitraPlaza Nagoya Batam Siap Sewa (Pilar: apartemen)
+21. `jasa-pasang-top-table-granit-dapur-batam` - Jasa Pasang Top Table Granit Dapur dan Kitchen Set Batam (Pilar: kitchen-set)
+22. `jasa-pembuatan-kamar-tidur-anak-minimalis-batam` - Jasa Interior Kamar Tidur Anak Minimalis Custom di Batam (Pilar: kamar-tidur)
+23. `jasa-pembuatan-meja-kerja-kubikel-kantor-batam` - Jasa Pembuatan Meja Kerja Kubikel Kantor Batam Modern (Pilar: interior-kantor)
 
 *(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 
