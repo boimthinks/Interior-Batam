@@ -79,7 +79,7 @@ draft: true
 
 ## 7. Daftar Artikel Terbit
 
-Saat ini terdapat 25 artikel terbit dengan konten penuh (E-E-A-T):
+Saat ini terdapat 30 artikel terbit dengan konten penuh (E-E-A-T):
 1. `kabinet-sink-aluminium-vs-multipleks-batam` - Kabinet Bawah Sink Dapur: Aluminium ACP vs Multipleks HPL di Batam
 2. `biaya-kitchen-set-aluminium-per-meter-batam` - Bedah Biaya Kitchen Set Aluminium Batam per Meter Lari
 3. `biaya-renovasi-dapur-teras-batu-aji-batam` - Rincian Biaya Renovasi Dapur & Teras Rumah Subsidi Batu Aji
@@ -106,6 +106,10 @@ Saat ini terdapat 25 artikel terbit dengan konten penuh (E-E-A-T):
 24. `jasa-renovasi-fasad-teras-rumah-subsidi-batam` - Jasa Renovasi Fasad dan Teras Rumah Subsidi Batam Kokoh (Pilar: rumah-subsidi)
 25. `lemari-knock-down-lift-apartemen-batam` - Lemari Knock-Down Apartemen Batam Lolos Lift Sempit (Pilar: apartemen)
 26. `ruang-tamu-memanjang-tipe-36-batam` - Desain Interior Ruang Tamu Memanjang Rumah Batam Bebas Sempit (Pilar: ruang-tamu)
+27. `lemari-pakaian-pintu-geser-cermin-batam` - Jasa Lemari Pakaian Pintu Geser Cermin Kamar Tidur Batam (Pilar: kamar-tidur)
+28. `partisi-kisi-ruang-tamu-kayu-aluminium-hpl-batam` - Partisi Kisi Ruang Tamu Batam Kayu Aluminium dan HPL (Pilar: ruang-tamu)
+29. `solusi-dinding-rembes-shared-wall-batam` - Solusi Dinding Rembes Shared Wall Rumah Subsidi Batam (Pilar: rumah-subsidi)
+30. `jasa-pembuatan-pantry-ruang-istirahat-kantor-batam` - Jasa Pembuatan Pantry Kantor Batam Rapi dan Higienis (Pilar: interior-kantor)
 
 *(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 

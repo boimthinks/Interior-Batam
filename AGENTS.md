@@ -65,3 +65,11 @@ Setiap penulisan artikel baru wajib melalui alur kerja berurutan (chaining dua s
 3. Selalu verifikasi data di `SUMBER-PENGETAHUAN.md` sebelum membuat konten.
 4. Selalu gunakan sudut pandang marketing/penawaran jasa (BUKAN panduan/DIY).
 5. Selalu sertakan kontak WhatsApp (+62 813-7370-3639) di artikel.
+
+---
+
+## Deployment Target
+
+- **Platform:** DomaiNesia (cPanel Addon Domain)
+- **Target Path:** `/home/apitowpc/interiorbatam.web.id/`
+- **Catatan & Metode:** Gunakan skill `cpanel-domainesia`. Perintah cepat: `npm run deploy`
