@@ -11,7 +11,7 @@ pubDate: 2026-11-20
 author: Muhammad Zazuli
 pillar: interior-kantor
 heroImage: /images/blog/jasa-ruang-rapat-kubikel-partisi-kisi-batam_poco.webp
-draft: true
+draft: false
 ---
 
 Punya kantor ruko atau unit kantor kecil di Batam dan selama ini rapat diadakan di pantry, di meja resepsionis, bahkan di teras belakang? Anda bukan satu-satunya. Hampir setiap minggu tim kami menemui pemilik bisnis di Batam Center, Baloi, sampai Taman Raya yang kondisinya sama: karyawan sudah cukup banyak, tapi ruang rapat belum ada karena dikhawatirkan memakan tempat.
