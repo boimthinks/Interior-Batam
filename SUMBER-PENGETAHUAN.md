@@ -110,6 +110,8 @@ Saat ini terdapat 30 artikel terbit dengan konten penuh (E-E-A-T):
 28. `partisi-kisi-ruang-tamu-kayu-aluminium-hpl-batam` - Partisi Kisi Ruang Tamu Batam Kayu Aluminium dan HPL (Pilar: ruang-tamu)
 29. `solusi-dinding-rembes-shared-wall-batam` - Solusi Dinding Rembes Shared Wall Rumah Subsidi Batam (Pilar: rumah-subsidi)
 30. `jasa-pembuatan-pantry-ruang-istirahat-kantor-batam` - Jasa Pembuatan Pantry Kantor Batam Rapi dan Higienis (Pilar: interior-kantor)
+31. `material-furnitur-apartemen-sewa-harian-batam` - Furnitur Apartemen Sewa Harian Batam yang Awet Dipakai (Pilar: apartemen)
+32. `jasa-meja-rias-vanity-kamar-tidur-batam` - Jasa Meja Rias dan Vanity Kamar Tidur Batam Anti Rayap (Pilar: kamar-tidur)
 
 *(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 
