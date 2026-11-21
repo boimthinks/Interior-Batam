@@ -113,6 +113,8 @@ Saat ini terdapat 30 artikel terbit dengan konten penuh (E-E-A-T):
 31. `material-furnitur-apartemen-sewa-harian-batam` - Furnitur Apartemen Sewa Harian Batam yang Awet Dipakai (Pilar: apartemen)
 32. `jasa-meja-rias-vanity-kamar-tidur-batam` - Jasa Meja Rias dan Vanity Kamar Tidur Batam Anti Rayap (Pilar: kamar-tidur)
 
+33. `custom-furniture-batam-vs-mebel-toko` - Custom Furniture Batam vs Mebel Toko yang Cepat Rusak (Pilar: ruang-tamu)
+
 *(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 
 ## 8. Topik Rekomendasi Artikel
@@ -129,4 +131,4 @@ Saat ini terdapat 30 artikel terbit dengan konten penuh (E-E-A-T):
 
 ---
 
-*File ini adalah sumber kebenaran tunggal untuk semua data bisnis, kontak, dan aturan penulisan Interior Batam.*
+*Sumber kebenaran: koreksi ke SUMBER-PENGETAHUAN.md bila ada perubahan.*
