@@ -114,6 +114,7 @@ Saat ini terdapat 30 artikel terbit dengan konten penuh (E-E-A-T):
 32. `jasa-meja-rias-vanity-kamar-tidur-batam` - Jasa Meja Rias dan Vanity Kamar Tidur Batam Anti Rayap (Pilar: kamar-tidur)
 
 33. `custom-furniture-batam-vs-mebel-toko` - Custom Furniture Batam vs Mebel Toko yang Cepat Rusak (Pilar: ruang-tamu)
+34. `aturan-renovasi-rumah-subsidi-kpr-batam` - Batasan Renovasi Rumah Subsidi Batam agar KPR Tetap Aman (Pilar: rumah-subsidi)
 
 *(Catatan: 20 ide/draft artikel lainnya yang belum ada isinya telah dicadangkan di file `BACKUP-DRAFT-ARTIKEL.md`)*
 

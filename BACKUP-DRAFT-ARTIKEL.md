@@ -115,8 +115,9 @@ Total artikel dalam backup: 20
 ---
 
 ## 13. Regulasi Renovasi Rumah Subsidi BP Batam & BTN
+- **Status**: SUDAH TERBIT sebagai `aturan-renovasi-rumah-subsidi-kpr-batam.md` (24 Nov 2026, pilar `rumah-subsidi`)
 - **Slug File**: `regulasi-renovasi-rumah-subsidi-bp-btn.md`
-- **Pilar Layanan**: `ruang-tamu`
+- **Pilar Layanan**: `rumah-subsidi`
 - **Deskripsi**: Regulasi Renovasi Rumah Subsidi BP Batam & BTN — studi kasus & panduan praktis dari pengalaman lapangan tim interior Batam.
 - **Hero Image**: `/images/placeholder/article-22.svg`
 - **Catatan Fokus E-E-A-T / Riset**: Mitigasi bahaya kebakaran; meletakkan adaptor LED di titik yang berventilasi dan mudah diakses perawatannya, pemilihan profil aluminium housing LED sebagai pelepas panas (heat sink).
