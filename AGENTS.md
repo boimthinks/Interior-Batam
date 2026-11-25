@@ -26,17 +26,35 @@ Setiap penulisan artikel baru wajib melalui alur kerja berurutan (chaining dua s
    - Eksekusi penulisan dengan gaya bahasa marketing persuasif, solutif, dan manusiawi (humanizer).
    - Terapkan kaidah SEO/GEO 2026, validasi frontmatter Astro, serta pastikan bebas pola klise AI.
 
-## 4. Tech Stack Project
+## 4. Status Draft dan Tanggal Terbit
+Artikel ditulis dengan `draft: true`. Situs **tidak membangun** halaman draft,
+sehingga tidak tayang dan tidak masuk sitemap. Semua halaman yang menampilkan
+artikel wajib memakai `getPublishedArticles()` dari `src/lib/articles.ts`,
+bukan `getCollection('articles')` langsung.
+
+Tanggal di frontmatter hanya label dan tidak dipakai untuk menyaring. Karena itu
+artikel hanya boleh diterbitkan lewat perintah workflow, satu artikel per hari:
+
+```bash
+python3 _workflow/terbit.py daftar --site interiorbatam.web.id
+python3 _workflow/terbit.py terbit --site interiorbatam.web.id
+```
+
+Perintah ini menyetel `draft: false` dan `pubDate` ke **tanggal hari ini**,
+bukan tanggal rencana. Kalau sehari terlewat, artikel yang tertunda tetap
+bertanggal hari saat benar-benar diterbitkan.
+
+## 5. Tech Stack Project
 **Framework:** Astro
 **Styling:** (tunggu konfirmasi)
 **Deployment:** (tunggu konfirmasi)
 
-## 5. Perintah Utama
+## 6. Perintah Utama
 - `npm run dev` - Jalankan development server
 - `npm run build` - Build untuk production
 - `npm run preview` - Preview build production
 
-## 6. Konvensi Project & Kategori Artikel
+## 7. Konvensi Project & Kategori Artikel
 - **6 Kategori Layanan (Wajib untuk Semua Artikel Blog)**:
   1. `kitchen-set` — Kitchen Set
   2. `rumah-subsidi` — Renovasi Rumah Subsidi
@@ -48,7 +66,7 @@ Setiap penulisan artikel baru wajib melalui alur kerja berurutan (chaining dua s
 - Judul layanan maupun artikel sebisa mungkin tidak menggunakan titik dua (`:`).
 - **DILARANG menggunakan angka di dalam judul artikel** (buat judul mengalir secara alami dan deskriptif tanpa angka).
 
-## 7. Sudut Pandang Penulisan (Marketing & Komersial)
+## 8. Sudut Pandang Penulisan (Marketing & Komersial)
 - **WAJIB**: Gunakan **sudut pandang marketing, penawaran jasa, dan persuasif komersial**.
 - **DILARANG**: Menulis artikel dengan sudut pandang "Panduan", "Tutorial", "Cara Memasang Sendiri / DIY", atau kata "Panduan" pada judul/slug.
 - **Fokus Konten**:

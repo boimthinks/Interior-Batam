@@ -6,13 +6,12 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import WhatsAppCTA from '../components/WhatsAppCTA.astro';
 import { SITE, waLink } from '../config/site';
+import { getPublishedArticles, sortByDateDesc } from '../lib/articles';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 const servicesBase = new URL('/layanan/', SITE.domain).href;
 
-const latestArticles = (await getCollection('articles'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
+const latestArticles = sortByDateDesc(await getPublishedArticles()).slice(0, 6);
 
 // Function to extract short title from full title
 function getShortTitle(fullTitle: string): string {

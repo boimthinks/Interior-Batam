@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { getPublishedArticles } from '../../lib/articles';
 
 type PillarKey = CollectionEntry<'articles'>['data']['pillar'];
 
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
   };
 
   const services = await getCollection('services');
-  const articles = await getCollection('articles');
+  const articles = await getPublishedArticles();
   return services.map((service) => {
     const meta = PILLAR_META[service.id];
     const related = meta
