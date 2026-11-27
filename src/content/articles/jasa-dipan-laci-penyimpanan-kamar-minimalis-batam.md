@@ -10,9 +10,9 @@ keywords:
 heroImage: /images/blog/jasa-dipan-laci-penyimpanan-kamar-minimalis-batam_poco.webp
 pillar: kamar-tidur
 author: Muhammad Zazuli
-pubDate: 2026-11-26
-updatedDate: 2026-11-26
-draft: true
+pubDate: 2026-11-27
+updatedDate: 2026-11-27
+draft: false
 ---
 
 Kamar tidur di banyak rumah Batam punya ukuran yang tidak sebanding dengan barang penghuninya. Ruang tiga kali tiga meter harus menampung kasur, lemari, koper, selimut tebal, kardus dokumen, dan kadang setrika. Lemari penuh, lantai tidak tersisa untuk meletakkan apa pun.
