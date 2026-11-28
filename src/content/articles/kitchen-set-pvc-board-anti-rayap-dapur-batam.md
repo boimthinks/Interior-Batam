@@ -10,9 +10,9 @@ keywords:
 heroImage: /images/blog/kitchen-set-pvc-board-anti-rayap-dapur-batam_poco.webp
 pillar: kitchen-set
 author: Muhammad Zazuli
-pubDate: 2026-11-27
-updatedDate: 2026-11-27
-draft: true
+pubDate: 2026-11-28
+updatedDate: 2026-11-28
+draft: false
 ---
 
 Kabinet bawah dapur adalah bagian furnitur yang paling cepat rusak di rumah Batam. Bukan karena pemakaian kasar, tetapi karena tempatnya memang paling basah. Di bawah sink ada tetesan yang tidak terlihat, di samping kompor ada uap, dan di lantai keramik yang dingin ada embun yang tidak pernah kering.
